@@ -1,0 +1,148 @@
+.motion-edition{--ease-luxe:cubic-bezier(.2,.76,.22,1);overflow-x:hidden}
+.page-intro{position:fixed;inset:0;z-index:100;background:#0b0b0b;color:#fff;display:grid;place-items:center;pointer-events:none;animation:intro-out 1.05s var(--ease-luxe) 1.1s forwards}
+.intro-mark{display:flex;flex-direction:column;align-items:center;gap:16px;animation:intro-mark 1s var(--ease-luxe) both}
+.intro-mark strong{font:clamp(84px,14vw,190px)/.72 "Instrument Serif";font-weight:400;letter-spacing:-.07em}
+.intro-mark span{font:600 10px "Manrope";letter-spacing:.42em;color:#c8a96a}
+@keyframes intro-mark{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes intro-out{to{transform:translateY(-102%);visibility:hidden}}
+
+.scroll-progress{position:fixed;left:0;right:0;top:0;height:2px;z-index:80;background:rgba(255,255,255,.08);pointer-events:none}
+.scroll-progress i{display:block;width:var(--scroll-progress,0%);height:100%;background:#c8a96a;transition:width .08s linear}
+.motion-edition .topbar{position:fixed;transition:height .45s var(--ease-luxe),background .45s,border-color .45s,backdrop-filter .45s}
+.motion-edition .topbar.scrolled{height:64px;background:rgba(11,11,11,.8);border-color:rgba(255,255,255,.12);backdrop-filter:blur(16px)}
+.motion-edition .hero-image{transform:scale(1.055);will-change:transform}
+.motion-edition .hero h1{animation:hero-title 1.1s var(--ease-luxe) 1.75s both}
+.motion-edition .hero-kicker{animation:hero-copy .9s var(--ease-luxe) 1.9s both}
+.motion-edition .hero-copy,.motion-edition .discover{animation:hero-copy .9s var(--ease-luxe) 2.05s both}
+@keyframes hero-title{from{opacity:0;transform:translateY(70px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+@keyframes hero-copy{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+.motion-gallery{background:#0b0b0b!important;color:#fff;position:relative;overflow:hidden}
+.motion-gallery::before{content:"SIGNATURE";position:absolute;left:-.04em;top:.25em;font:clamp(160px,27vw,430px)/.8 "Instrument Serif";letter-spacing:-.06em;color:rgba(255,255,255,.025);pointer-events:none}
+.gallery-heading{display:grid;grid-template-columns:.55fr 1.45fr;gap:6vw;align-items:start;margin-bottom:70px;position:relative;z-index:1}
+.gallery-heading .section-index{color:#c8a96a;margin-top:18px}
+.gallery-heading h2{font:clamp(62px,8vw,122px)/.86 "Instrument Serif";letter-spacing:-.04em;margin:0;max-width:1050px}
+.gallery-heading h2 em{font-weight:400;color:#c8a96a}
+.gallery-shell{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(320px,.68fr);gap:clamp(36px,6vw,90px);align-items:center;position:relative;z-index:1}
+.gallery-media{position:relative;margin:0;height:min(72vh,780px);min-height:560px;overflow:hidden;background:#111111;will-change:transform}
+.gallery-media::before{content:"";position:absolute;inset:-24px;background-image:linear-gradient(rgba(11,11,11,.56),rgba(11,11,11,.68)),var(--gallery-image);background-size:cover;background-position:center;filter:blur(22px) saturate(.8);transform:scale(1.08);opacity:.72;transition:background-image .3s ease}
+.gallery-media::after{content:"";position:absolute;z-index:2;inset:0;border:1px solid rgba(255,255,255,.22);pointer-events:none}
+.gallery-media img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain;object-position:center;padding:clamp(8px,1vw,16px);transition:opacity .32s ease,transform .85s var(--ease-luxe);transform:scale(1)}
+.gallery-media img.switching{opacity:0;transform:scale(.975)}
+.gallery-media figcaption{position:absolute;z-index:3;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:end;padding:90px 28px 24px;background:linear-gradient(transparent,rgba(11,11,11,.92));font:600 10px "Manrope";letter-spacing:.28em;pointer-events:none}
+.gallery-current{position:relative;z-index:1;font:54px/1 "Instrument Serif";letter-spacing:0;color:#c8a96a;text-shadow:0 3px 18px rgba(11,11,11,.55)}
+.gallery-intro{max-width:440px;font-size:16px;line-height:1.75;color:rgba(255,255,255,.66);margin:0 0 32px}
+.gallery-tabs{counter-reset:gallery;border-top:1px solid rgba(255,255,255,.2)}
+.gallery-tabs button{counter-increment:gallery;position:relative;width:100%;display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:center;text-align:left;border:0;border-bottom:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.55);padding:24px 0;cursor:pointer;font:clamp(29px,3vw,44px)/1 "Instrument Serif";transition:color .35s,padding-left .45s var(--ease-luxe)}
+.gallery-tabs button::before{content:"0" counter(gallery);font:600 10px "Manrope";letter-spacing:.16em;color:#c8a96a}
+.gallery-tabs button::after{content:"↗";position:absolute;right:0;top:50%;transform:translateY(-50%) scale(.7);opacity:0;color:#c8a96a;font:20px "Manrope";transition:opacity .35s,transform .35s}
+.gallery-tabs button:is(:hover,.active,:focus-visible){color:#fff;padding-left:12px}
+.gallery-tabs button:is(:hover,.active,:focus-visible)::after{opacity:1;transform:translateY(-50%) scale(1)}
+
+.instagram-showcase{background:#f5f3ee!important;color:#0b0b0b;overflow:hidden;position:relative}
+.instagram-showcase::after{content:"@PAMELA.MARTINS.PMU";position:absolute;right:-.03em;top:.2em;font:clamp(90px,15vw,230px)/.8 "Instrument Serif";letter-spacing:-.045em;color:rgba(11,11,11,.035);pointer-events:none;white-space:nowrap}
+.instagram-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:clamp(42px,8vw,130px);align-items:end;position:relative;z-index:1;margin-bottom:64px}
+.instagram-heading h2{font:clamp(62px,7.8vw,118px)/.88 "Instrument Serif";letter-spacing:-.04em;margin:42px 0 0;max-width:980px}
+.instagram-heading h2 em{font-weight:400;color:#c8a96a}
+.instagram-intro{padding-bottom:10px}
+.instagram-intro>p{font:15px/1.8 "Manrope";max-width:480px;margin:0 0 30px;color:rgba(11,11,11,.68)}
+.instagram-cta{display:inline-flex;align-items:center;gap:13px;color:#0b0b0b;text-decoration:none;border-bottom:1px solid rgba(11,11,11,.35);padding:0 0 10px;font:600 12px "Manrope";letter-spacing:.035em;transition:color .3s,border-color .3s,transform .35s var(--ease-luxe)}
+.instagram-cta svg,.footer-instagram svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.65}
+.instagram-cta b{font-size:18px;font-weight:400;margin-left:7px;transition:transform .3s}
+.instagram-cta:is(:hover,:focus-visible){color:#c8a96a;border-color:#c8a96a;transform:translateY(-2px)}
+.instagram-cta:is(:hover,:focus-visible) b{transform:translate(3px,-3px)}
+.instagram-rail-wrap{position:relative;z-index:1}
+.instagram-track{display:flex;gap:clamp(14px,1.5vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-inline:contain;padding:0 0 24px;scrollbar-width:none}
+.instagram-track::-webkit-scrollbar{display:none}
+.instagram-card{position:relative;flex:0 0 clamp(260px,27vw,390px);aspect-ratio:9/16;overflow:hidden;scroll-snap-align:start;background:#ded8cc;color:#fff;text-decoration:none;box-shadow:0 18px 55px rgba(11,11,11,.12)}
+.instagram-card img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease-luxe),filter .45s}
+.instagram-card:first-child img{object-fit:contain;background:#f5f3ee}
+.instagram-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 66%,rgba(11,11,11,.72));opacity:.7;transition:opacity .4s}
+.instagram-card span{position:absolute;z-index:1;left:20px;bottom:18px;font:36px/1 "Instrument Serif";color:#c8a96a;text-shadow:0 2px 16px rgba(11,11,11,.35)}
+.instagram-card:is(:hover,:focus-visible) img{transform:scale(1.035);filter:saturate(1.04)}
+.instagram-card:first-child:is(:hover,:focus-visible) img{transform:none}
+.instagram-card:is(:hover,:focus-visible)::after{opacity:1}
+.instagram-controls{display:flex;justify-content:flex-end;gap:9px;padding-top:2px}
+.instagram-controls button{width:52px;height:52px;border:1px solid rgba(11,11,11,.28);border-radius:50%;background:transparent;color:#0b0b0b;cursor:pointer;font-size:20px;transition:background .3s,color .3s,transform .3s}
+.instagram-controls button:is(:hover,:focus-visible){background:#0b0b0b;color:#fff;transform:translateY(-2px)}
+
+.site-footer{background:#050505;color:#fff;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:30px;padding:48px 6vw 50px;border-top:1px solid rgba(255,255,255,.14)}
+.site-footer a{color:inherit;text-decoration:none}
+.footer-mark{font:42px/1 "Instrument Serif";justify-self:start}
+.footer-mark sup{font:8px "Manrope";vertical-align:top}
+.site-footer>p{margin:0;color:rgba(255,255,255,.58);font:11px/1.5 "Manrope";letter-spacing:.08em;text-align:center}
+.footer-instagram{display:inline-flex;align-items:center;justify-self:end;gap:10px;font:600 11px "Manrope";letter-spacing:.04em;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:8px;transition:color .3s,border-color .3s}
+.footer-instagram:is(:hover,:focus-visible){color:#c8a96a;border-color:#c8a96a}
+
+.motion-edition .reveal{opacity:0;transform:translate3d(0,52px,0);transition:opacity .85s var(--ease-luxe),transform .95s var(--ease-luxe);transition-delay:var(--reveal-delay,0ms)}
+.motion-edition .reveal.reveal-left{transform:translate3d(-55px,0,0)}
+.motion-edition .reveal.reveal-scale{transform:scale(.96);transform-origin:center}
+.motion-edition .reveal.is-visible{opacity:1;transform:none}
+.motion-edition [data-parallax]{will-change:transform}
+.motion-edition .signature-row article,.motion-edition .brand-grid article{transition:background .4s,transform .5s var(--ease-luxe)}
+.motion-edition .brand-grid article:hover{background:rgba(255,255,255,.035);transform:translateY(-5px)}
+.result-lab{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(320px,.58fr);gap:clamp(30px,5vw,78px);align-items:start}
+.result-showcase{position:relative;display:grid;place-items:center;height:clamp(560px,68vh,680px);min-height:0;margin:0!important;overflow:hidden;background:#111111;isolation:isolate;box-shadow:0 26px 70px rgba(0,0,0,.16)}
+.result-showcase::before{content:"";position:absolute;inset:-24px;background-image:linear-gradient(rgba(11,11,11,.62),rgba(11,11,11,.72)),var(--result-image);background-size:cover;background-position:center;filter:blur(24px) saturate(.76);transform:scale(1.08);opacity:.8}
+.result-showcase-image{position:absolute;z-index:1;inset:0;display:block;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;padding:clamp(10px,1.2vw,18px);transition:opacity .28s ease,transform .55s var(--ease-luxe)!important;transform:none!important}
+.result-showcase.switching .result-showcase-image{opacity:0;transform:scale(.98)!important}
+.result-showcase figcaption{z-index:2;padding:72px 24px 20px!important;background:linear-gradient(transparent,rgba(11,11,11,.78))!important}
+.result-showcase figcaption b{font-size:36px!important;color:#c8a96a}
+.result-story{display:flex;flex-direction:column;min-height:clamp(560px,68vh,680px);padding:10px 0 8px;border-top:1px solid rgba(11,11,11,.25);border-bottom:1px solid rgba(11,11,11,.25)}
+.result-tabs{display:flex;gap:7px;margin-bottom:auto}
+.result-tabs button{border:1px solid rgba(11,11,11,.25);background:transparent;color:#0b0b0b;padding:10px 14px;border-radius:999px;cursor:pointer;font:600 10px "Manrope";letter-spacing:.08em;transition:background .3s,color .3s,border-color .3s,transform .3s}
+.result-tabs button:is(:hover,.active,:focus-visible){background:#0b0b0b;color:#fff;border-color:#0b0b0b;transform:translateY(-2px)}
+.result-number{display:flex;justify-content:space-between;align-items:end;margin:70px 0 16px;color:#c8a96a;font:600 10px "Manrope";letter-spacing:.28em}
+.result-number b{font:64px/1 "Instrument Serif";letter-spacing:-.05em;color:#0b0b0b}
+.result-title{font:clamp(50px,4.4vw,76px)/.9 "Instrument Serif";letter-spacing:-.035em;margin:0 0 24px;max-width:480px}
+.result-copy{font:15px/1.8 "Manrope";color:rgba(11,11,11,.72);margin:0 0 26px;max-width:480px}
+.result-method{list-style:none;margin:0;padding:0;border-top:1px solid rgba(11,11,11,.16)}
+.result-method li{display:grid;grid-template-columns:38px 1fr;align-items:center;border-bottom:1px solid rgba(11,11,11,.16);padding:14px 0}
+.result-method span{color:#c8a96a;font:600 9px "Manrope";letter-spacing:.14em}
+.result-method p{margin:0;font:600 12px "Manrope";letter-spacing:.01em}
+.result-question{align-self:flex-start;margin-top:24px;border:0;background:transparent;color:#0b0b0b;border-bottom:1px solid #0b0b0b;padding:0 0 6px;cursor:pointer;font:600 11px "Manrope";letter-spacing:.06em;text-transform:uppercase}
+.result-hint{margin:22px 0 0;color:rgba(11,11,11,.46);font:500 9px "Manrope";letter-spacing:.16em;text-transform:uppercase}
+
+@media(max-width:760px){
+  .page-intro{animation-delay:.55s;animation-duration:.8s}
+  .intro-mark{gap:12px}.intro-mark span{font-size:8px;letter-spacing:.3em}
+  .motion-edition .topbar.scrolled{height:58px}
+  .motion-edition .hero h1{animation-delay:1.15s}.motion-edition .hero-kicker{animation-delay:1.28s}.motion-edition .hero-copy,.motion-edition .discover{animation-delay:1.4s}
+  .gallery-heading{grid-template-columns:1fr;gap:25px;margin-bottom:42px}
+  .gallery-heading .section-index{margin:0}
+  .gallery-heading h2{font-size:clamp(50px,14vw,66px);line-height:.91}
+  .gallery-shell{grid-template-columns:1fr;gap:34px}
+  .gallery-media{height:min(115vw,540px);min-height:380px}
+  .gallery-media figcaption{padding:72px 18px 18px}
+  .gallery-current{font-size:42px}
+  .gallery-intro{font-size:14px;margin-bottom:20px}
+  .gallery-tabs button{grid-template-columns:34px 1fr;font-size:30px;padding:20px 0}
+  .instagram-heading{grid-template-columns:1fr;gap:28px;margin-bottom:42px}
+  .instagram-heading h2{font-size:clamp(48px,13.5vw,64px);line-height:.92;margin-top:28px}
+  .instagram-intro{padding:0}
+  .instagram-intro>p{font-size:14px;line-height:1.7;margin-bottom:22px}
+  .instagram-card{flex-basis:min(78vw,340px)}
+  .instagram-controls{justify-content:flex-start;padding-top:0}
+  .instagram-controls button{width:46px;height:46px}
+  .site-footer{grid-template-columns:1fr;justify-items:start;padding:42px 6vw 92px;gap:22px}
+  .site-footer>p{text-align:left}
+  .footer-instagram{justify-self:start}
+  .result-lab{grid-template-columns:1fr;gap:30px}
+  .result-showcase{min-height:0;height:min(125vw,520px)}
+  .result-showcase-image{padding:8px}
+  .result-story{min-height:0;padding:24px 0 0}
+  .result-tabs{margin-bottom:0}
+  .result-number{margin:42px 0 14px}
+  .result-number b{font-size:52px}
+  .result-title{font-size:52px}
+  .result-copy{font-size:14px;line-height:1.7}
+  .motion-edition .reveal,.motion-edition .reveal.reveal-left{transform:translate3d(0,32px,0)}
+  .motion-edition [data-parallax]{transform:none!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .page-intro{display:none}
+  .motion-edition *{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
+  .motion-edition .reveal{opacity:1!important;transform:none!important}
+  .motion-edition [data-parallax],.motion-edition .hero-image{transform:none!important}
+}
