@@ -138,3 +138,81 @@ const pricesSection=document.querySelector('.prices');
 const ctaSection=document.querySelector('.cta');
 if(mainContent&&instagramSection&&faqSection)mainContent.insertBefore(instagramSection,faqSection);
 if(mainContent&&pricesSection&&ctaSection)mainContent.insertBefore(pricesSection,ctaSection);
+
+// Luxury refinement edition: complete FR / PT / EN content and accessible language cycling.
+Object.assign(i18n.fr,{
+  serviceBrowsCopy:'Architecture du regard, tracé personnalisé et techniques poil à poil adaptées à votre morphologie.',
+  serviceLipsCopy:'Correction de la tonalité, neutralisation des lèvres foncées et couleur sur mesure au fini naturel.',
+  serviceLashesCopy:'Courbure, teinture et soin pour ouvrir le regard avec élégance, sans l’alourdir.',
+  serviceSkinCopy:'Protocoles ciblés pour purifier, lisser, hydrater et raviver l’éclat de chaque carnation.',
+  credentialsLabel:'03 / PARCOURS & CERTIFICATIONS',
+  pigmentNote:'Nuances de référence. Le pigment final est choisi après l’analyse professionnelle de la peau, du sous-ton et du résultat souhaité.'
+});
+Object.assign(i18n.pt,{
+  serviceBrowsCopy:'Arquitetura do olhar, desenho personalizado e técnicas fio a fio adaptadas à sua fisionomia.',
+  serviceLipsCopy:'Correção do tom, neutralização de lábios escuros e cor sob medida com acabamento natural.',
+  serviceLashesCopy:'Curvatura, tintura e cuidado para abrir o olhar com elegância, sem pesar.',
+  serviceSkinCopy:'Protocolos direcionados para purificar, suavizar, hidratar e devolver luminosidade a cada tom de pele.',
+  credentialsLabel:'03 / TRAJETÓRIA & CERTIFICAÇÕES',
+  pigmentNote:'Tons de referência. O pigmento final é escolhido após uma análise profissional da pele, do subtom e do resultado desejado.'
+});
+i18n.en={
+  navExpertise:'Treatments',navPrices:'Prices',navQuestions:'Questions',book:'Book',
+  heroKicker:'International PMU · Le Cannet',heroTitle:'The right<br><em>colour.</em>',heroCopy:'Permanent makeup designed for every skin tone, with specialist expertise in melanin-rich skin.',discover:'Discover',
+  signaturesLabel:'01 / TREATMENTS',signaturesTitle:'Treatments designed to<br><em>reveal your beauty.</em>',signaturesLead:'From brow definition to radiant skin, every protocol is personalised to respect your identity and skin tone.',
+  serviceBrows:'Brows',serviceBrowsCopy:'Eye-area architecture, bespoke mapping and hair-stroke techniques adapted to your features.',
+  serviceLips:'Lips',serviceLipsCopy:'Tone correction, dark-lip neutralisation and bespoke colour with a natural finish.',
+  serviceLashes:'Lashes',serviceLashesCopy:'Lift, tint and care to open the eyes elegantly without weighing them down.',
+  serviceSkin:'Skin',serviceSkinCopy:'Targeted protocols to purify, smooth, hydrate and restore radiance to every skin tone.',serviceDiscover:'Discover ↗',
+  positionLabel:'02 / POSITIONING & BRAND',positionLine1:'Expertise that travels.',positionLine2:'A signature that remains.',
+  brandInternational:'International training',brandInternationalCopy:'Internationally trained, including PhiAcademy protocols, with more than 35 certificates and diplomas earned around the world.',
+  brandSpecialist:'Melanin-rich skin specialist',brandSpecialistCopy:'Expertise in Black, brown and mixed-race skin, with a special focus on lightening and neutralising dark lips.',
+  brandScience:'Beauty guided by science',brandScienceCopy:'An approach at the intersection of health, cosmetology and aesthetics.',
+  brandProducts:'PhiAcademy & Utsukusy',brandProductsCopy:'Pamela embodies PhiAcademy standards and works with professional Utsukusy products selected for protocol quality and safety.',brandConfirm:'A selection of Pamela’s professional journey is presented below.',
+  credentialsLabel:'03 / JOURNEY & CERTIFICATIONS',credentialsTitle:'Expertise built<br><em>course after course.</em>',credentialsCopy:'International techniques, exacting practice and a specialisation devoted to the beauty of every skin tone.',credentialsCount:'certificates and diplomas earned around the world',credentialsPortrait:'Precision, listening and natural results.',credentialsPhi:'PhiAcademy-certified training in lip lightening and neutralisation.',credentialsProducts:'Treatments performed with Utsukusy products selected for professional performance.',certificateEyebrow:'CERTIFICATE SELECTION',certificateTitle:'A visible journey. Verifiable expertise.',
+  pigmentLead:'The right pigment is not guessed.',pigmentTitle:'It is observed.',pigmentHint:'Move your cursor to explore the colour and texture.',pigmentNote:'Reference shades. The final pigment is selected after a professional assessment of the skin, undertone and desired result.',
+  pricesLabel:'09 / PRICES',pricesTitle:'Clear prices before you book',priceNote:'Permanent lip and brow makeup is quoted individually.',priceEyes:'Lashes & brows',priceFace:'Face & beauty',priceSugaring:'Sugaring',priceWax:'Hot wax',priceMen:'Men’s waxing',priceDisclaimer:'Prices are based on the current brochure. Pamela confirms the final quote before treatment.',
+  diversityLabel:'06 / INCLUSIVE BEAUTY',diversityTitle:'Every skin deserves a precise reading.',diversityCopy:'Pamela welcomes every skin type, shade, origin and ethnicity — French, Brazilian, Cape Verdean, Portuguese and many more.',
+  faqLabel:'08 / QUESTIONS',faqTitle:'Before you decide',faq1Q:'Is lip neutralisation right for me?',faq1A:'Send a photo in natural light to receive initial personalised guidance.',faq2Q:'How do I get a quote?',faq2A:'Answer a few questions. Pamela will review your request and finalise your quote.',faq3Q:'Where can I book?',faq3A:'Book directly on Planity or contact Pamela on WhatsApp.',
+  j1Title:'Tell us what you need',j1Copy:'A few answers via WhatsApp or Instagram.',j2Title:'Pamela reviews your request',j2Copy:'Area, history, photo and desired result.',j3Title:'Receive her advice',j3Copy:'Recommendation, quote and preparation.',j4Title:'Follow-up continues',j4Copy:'Reminders and touch-up at the right time.',
+  ctaLead:'Your project begins with a conversation.',ctaTitle:'Let’s talk about your skin.',whatsapp:'WhatsApp · +33 6 81 02 98 37',planity:'Book on Planity',assistant:'Assistant',assistantDemo:'Demo assistant',demoLabel:'DEMO · no message is sent'
+};
+flows.en={start:['Hello 👋 What would you like to know?',[['Lips','lips'],['Brows','brows'],['Prices','prices'],['Book','book']]],lips:['Is this your first pigmentation or a touch-up? You can then send a photo in natural light.',[['First time','done'],['Touch-up','done']]],brows:['Is this your first pigmentation or a touch-up? An unfiltered photo will help Pamela advise you.',[['First time','done'],['Touch-up','done']]],prices:['Main prices are shown on the site. Permanent makeup is quoted individually.',[['View prices','close'],['Talk to Pamela','whatsapp']]],book:['Book through Planity or contact Pamela on WhatsApp.',[['Planity','planity'],['WhatsApp','whatsapp']]],done:['Thank you ✨ Pamela will personally review your request before confirming her advice and quote.',[['WhatsApp','whatsapp']]]};
+const translateEnglishHtml=value=>{
+  const exact={
+    '03 / INSTAGRAM':'03 / INSTAGRAM','Suivez son travail.<br><em>Découvrez sa signature.</em>':'Follow her work.<br><em>Discover her signature.</em>',
+    'Conseils, coulisses et transformations : retrouvez l’univers de Pamela au quotidien.':'Tips, behind-the-scenes moments and transformations: discover Pamela’s world every day.',
+    'Comment se déroule l’accompagnement ?':'How does the personalised journey work?','AVANT':'BEFORE','APRÈS':'AFTER',
+    'Neutralisation labiale':'Lip neutralisation','Pigmentation des lèvres':'Lip pigmentation','Lip Blush naturel':'Natural Lip Blush','Design des sourcils':'Brow design'
+  };
+  if(exact[value])return exact[value];
+  return value
+    .replace('Épilation sourcils + teinture','Brow shaping + tint')
+    .replaceAll('entretien','maintenance').replaceAll('coloration','tint')
+    .replace('Microneedling','Microneedling').replace('Nettoyage facial classique','Classic facial cleansing')
+    .replace('Nettoyage Hydra purifiant','Purifying Hydra cleansing').replace('Manucure flash + couleur','Express manicure + colour')
+    .replace('Soin complet maillot + vajacial','Complete bikini care + vajacial').replace('Maillot intégral + vajacial','Full bikini + vajacial')
+    .replace('Lèvre supérieure','Upper lip').replace('Sourcils sans forme','Brows without shaping').replace('Sourcils','Brows')
+    .replace('Aisselles','Underarms').replace('Demi-bras','Half arms').replace('bras entiers','full arms')
+    .replace('Maillot classique / échancré / intégral','Classic / high-cut / full bikini')
+    .replace('Demi-jambes / jambes entières','Half legs / full legs').replace('Forfaits corps','Body packages')
+    .replace('Torse / ventre','Chest / abdomen').replace('Dos','Back').replace('Jambes entières','Full legs')
+    .replace('Maillot classique à intégral + SIF','Classic to full bikini + intergluteal').replace('Sur consultation','On consultation').replaceAll(' à ',' to ');
+};
+applyLang=function(){
+  document.documentElement.lang=language==='fr'?'fr':language==='pt'?'pt-BR':'en';
+  $$('[data-i18n]').forEach(e=>{const value=i18n[language]?.[e.dataset.i18n]??i18n.fr[e.dataset.i18n];if(value!==undefined)e.textContent=value});
+  $$('[data-i18n-html]').forEach(e=>{const value=i18n[language]?.[e.dataset.i18nHtml]??i18n.fr[e.dataset.i18nHtml];if(value!==undefined)e.innerHTML=value});
+  $$('[data-fr][data-pt]').forEach(e=>{e.innerHTML=language==='en'?(e.dataset.en||translateEnglishHtml(e.dataset.fr)):e.dataset[language]});
+  $$('[data-alt-fr][data-alt-pt]').forEach(e=>e.alt=language==='fr'?e.dataset.altFr:language==='pt'?e.dataset.altPt:(e.dataset.altEn||e.dataset.altFr));
+  $('.lang').textContent=language==='fr'?'🇫🇷 FR':language==='pt'?'🇧🇷 PT':'🇬🇧 EN';
+  $('.lang').setAttribute('aria-label',language==='fr'?'Changer de langue':language==='pt'?'Mudar idioma':'Change language');
+};
+$('.lang').onclick=()=>{language=language==='fr'?'pt':language==='pt'?'en':'fr';applyLang()};
+applyLang();
+
+$$('[data-pigment]').forEach(button=>button.addEventListener('click',()=>{
+  $$('[data-pigment]').forEach(item=>item.classList.toggle('active',item===button));
+  field.style.setProperty('--pigment-core',button.dataset.pigment);
+  field.style.setProperty('--pigment-name',`"${button.textContent}"`);
+}));
