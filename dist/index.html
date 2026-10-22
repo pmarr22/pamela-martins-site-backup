@@ -5,23 +5,25 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Concept de site pour Pamela Martins, spécialiste en maquillage permanent inclusif au Cannet.">
   <title>Pamela Martins — International Luxury PMU</title>
-  <link rel="icon" href="data:,">
+  <link rel="canonical" href="https://pamelamartins-pmu.com/">
+  <link rel="icon" type="image/png" href="assets/favicon-pm.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="refinements.css">
   <link rel="stylesheet" href="motion.css">
   <link rel="stylesheet" href="final-overrides.css">
+  <link rel="stylesheet" href="refresh.css">
 </head>
 <body class="motion-edition">
-  <div class="page-intro" aria-hidden="true"><div class="intro-mark"><strong>PM</strong><span>INTERNATIONAL LUXURY PMU</span></div></div>
+  <div class="page-intro" aria-hidden="true"><div class="intro-mark"><img class="intro-emblem" src="assets/logo-pm-monogram-light.png" alt=""><span>INTERNATIONAL LUXURY PMU</span></div></div>
   <div class="scroll-progress" aria-hidden="true"><i></i></div>
   <div class="grain"></div>
   <header class="topbar">
-    <a class="brand brand-signature" href="#top" aria-label="Pamela Martins PMU — Accueil"><img src="assets/logo-header-v15.png" alt="Pamela Martins PMU — Votre beauté, notre expertise"></a>
+    <a class="brand brand-signature" href="#top" aria-label="Pamela Martins PMU — Beauty Permanent Make-up"><img class="brand-logo" src="assets/logo-horizontal-light.png" alt="Pamela Martins PMU" width="1500" height="311"></a>
     <nav><a href="#expertise" data-i18n="navExpertise">Expertise</a><a href="#tarifs" data-i18n="navPrices">Tarifs</a><a href="#questions" data-i18n="navQuestions">Questions</a></nav>
-    <div class="header-actions"><button class="lang" aria-label="Changer de langue">🇫🇷 FR</button><a class="booking" href="https://www.planity.com/pamela-martins-chez-diane-hair-beauty-06110-le-cannet" data-i18n="book">Réserver</a></div>
+    <div class="header-actions"><div class="language-switch" role="group" aria-label="Choisir la langue"><button type="button" class="lang-option" data-language="fr" aria-label="Français" title="Français" aria-pressed="true"><span class="flag-circle" aria-hidden="true"><svg class="flag-svg" viewBox="0 0 40 40" focusable="false"><defs><clipPath id="flag-fr-clip"><circle cx="20" cy="20" r="20"/></clipPath></defs><g clip-path="url(#flag-fr-clip)"><rect width="13.34" height="40" fill="#002395"/><rect x="13.33" width="13.34" height="40" fill="#fff"/><rect x="26.66" width="13.34" height="40" fill="#ed2939"/></g></svg></span></button><button type="button" class="lang-option" data-language="pt" aria-label="Português" title="Português" aria-pressed="false"><span class="flag-circle" aria-hidden="true"><svg class="flag-svg" viewBox="0 0 40 40" focusable="false"><defs><clipPath id="flag-br-clip"><circle cx="20" cy="20" r="20"/></clipPath></defs><g clip-path="url(#flag-br-clip)"><rect width="40" height="40" fill="#009739"/><path d="M20 5 37 20 20 35 3 20Z" fill="#ffdf00"/><circle cx="20" cy="20" r="8.5" fill="#002776"/></g></svg></span></button><button type="button" class="lang-option" data-language="en" aria-label="English" title="English" aria-pressed="false"><span class="flag-circle" aria-hidden="true"><svg class="flag-svg" viewBox="0 0 40 40" focusable="false"><defs><clipPath id="flag-gb-clip"><circle cx="20" cy="20" r="20"/></clipPath></defs><g clip-path="url(#flag-gb-clip)"><rect width="40" height="40" fill="#012169"/><path d="M0 0 40 40M40 0 0 40" stroke="#fff" stroke-width="9"/><path d="M0 0 40 40M40 0 0 40" stroke="#c8102e" stroke-width="4"/><path d="M20 0v40M0 20h40" stroke="#fff" stroke-width="12"/><path d="M20 0v40M0 20h40" stroke="#c8102e" stroke-width="6"/></g></svg></span></button></div><a class="booking" href="https://www.planity.com/pamela-martins-chez-diane-hair-beauty-06110-le-cannet" data-i18n="book">Réserver</a></div>
   </header>
 
   <main id="top">
@@ -42,20 +44,32 @@
       </div>
       <div class="service-cards">
         <article class="service-card">
-          <img src="assets/service-brows-v16.png" alt="Gros plan éditorial sur un sourcil dessiné avec précision" loading="lazy">
-          <div><span>01</span><h3 data-i18n="serviceBrows">Sourcils</h3><p data-i18n="serviceBrowsCopy">Architecture du regard, tracé personnalisé et techniques poil à poil adaptées à votre morphologie.</p><a href="#tarifs" data-i18n="serviceDiscover">Découvrir ↗</a></div>
+          <button class="service-card-image" type="button" aria-expanded="false" aria-label="Sourcils — afficher les détails">
+            <img src="assets/service-brows-v16.png" alt="Soin des sourcils par Pamela Martins" loading="lazy">
+            <span class="service-card-number">01</span><h3 data-i18n="serviceBrows">Sourcils</h3><span class="service-card-hint" aria-hidden="true">+</span>
+          </button>
+          <div class="service-card-details"><p data-i18n="serviceBrowsCopy">Architecture du regard, tracé personnalisé et techniques poil à poil adaptées à votre morphologie.</p><a href="#tarifs" data-i18n="serviceDiscover">Découvrir ↗</a></div>
         </article>
         <article class="service-card">
-          <img src="assets/service-lips-v15.png" alt="Beauté professionnelle des lèvres" loading="lazy">
-          <div><span>02</span><h3 data-i18n="serviceLips">Lèvres</h3><p data-i18n="serviceLipsCopy">Correction de la tonalité, neutralisation des lèvres foncées et couleur sur mesure au fini naturel.</p><a href="#tarifs" data-i18n="serviceDiscover">Découvrir ↗</a></div>
+          <button class="service-card-image" type="button" aria-expanded="false" aria-label="Lèvres — afficher les détails">
+            <img src="assets/service-lips-v15.png" alt="Soin des lèvres par Pamela Martins" loading="lazy">
+            <span class="service-card-number">02</span><h3 data-i18n="serviceLips">Lèvres</h3><span class="service-card-hint" aria-hidden="true">+</span>
+          </button>
+          <div class="service-card-details"><p data-i18n="serviceLipsCopy">Correction de la tonalité, neutralisation des lèvres foncées et couleur sur mesure au fini naturel.</p><a href="#tarifs" data-i18n="serviceDiscover">Découvrir ↗</a></div>
         </article>
         <article class="service-card">
-          <img src="assets/service-lashes-v15.png" alt="Beauté professionnelle des cils" loading="lazy">
-          <div><span>03</span><h3 data-i18n="serviceLashes">Cils</h3><p data-i18n="serviceLashesCopy">Courbure, teinture et soin pour ouvrir le regard avec élégance, sans l’alourdir.</p><a href="#tarifs" data-i18n="serviceDiscover">Découvrir ↗</a></div>
+          <button class="service-card-image" type="button" aria-expanded="false" aria-label="Peau — afficher les détails">
+            <img src="assets/service-skin-v15.png" alt="Soin de la peau par Pamela Martins" loading="lazy">
+            <span class="service-card-number">03</span><h3 data-i18n="serviceSkin">Peau</h3><span class="service-card-hint" aria-hidden="true">+</span>
+          </button>
+          <div class="service-card-details"><p data-i18n="serviceSkinCopy">Protocoles ciblés pour purifier, lisser, hydrater et raviver l’éclat de chaque carnation.</p><a href="#tarifs" data-i18n="serviceDiscover">Découvrir ↗</a></div>
         </article>
         <article class="service-card">
-          <img src="assets/service-skin-v15.png" alt="Soin professionnel de la peau" loading="lazy">
-          <div><span>04</span><h3 data-i18n="serviceSkin">Peau</h3><p data-i18n="serviceSkinCopy">Protocoles ciblés pour purifier, lisser, hydrater et raviver l’éclat de chaque carnation.</p><a href="#tarifs" data-i18n="serviceDiscover">Découvrir ↗</a></div>
+          <button class="service-card-image" type="button" aria-expanded="false" aria-label="Cils — afficher les détails">
+            <img src="assets/service-lashes-v15.png" alt="Soin des cils par Pamela Martins" loading="lazy">
+            <span class="service-card-number">04</span><h3 data-i18n="serviceLashes">Cils</h3><span class="service-card-hint" aria-hidden="true">+</span>
+          </button>
+          <div class="service-card-details"><p data-i18n="serviceLashesCopy">Courbure, teinture et soin pour ouvrir le regard avec élégance, sans l’alourdir.</p><a href="#tarifs" data-i18n="serviceDiscover">Découvrir ↗</a></div>
         </article>
       </div>
     </section>
@@ -63,7 +77,7 @@
     <section class="positioning">
       <div class="positioning-hero">
         <div class="positioning-copy"><p class="section-index" data-i18n="positionLabel">02 / POSITIONNEMENT & MARQUE</p><p class="position-kicker">INTERNATIONAL LUXURY PMU</p><h2><span data-i18n="positionLine1">Une expertise qui voyage.</span><br><em data-i18n="positionLine2">Une signature qui reste.</em></h2><p class="position-manifesto" data-fr="Pamela conjugue lecture de la carnation, maîtrise du pigment et précision du geste. Une approche profondément personnelle, enrichie par des formations internationales et pensée pour toutes les beautés." data-pt="Pamela combina leitura do tom da pele, domínio do pigmento e precisão do gesto. Uma abordagem profundamente pessoal, enriquecida por formações internacionais e pensada para todas as belezas." data-en="Pamela combines skin-tone analysis, pigment mastery and precise technique. A deeply personal approach, enriched by international training and designed for every kind of beauty.">Pamela conjugue lecture de la carnation, maîtrise du pigment et précision du geste. Une approche profondément personnelle, enrichie par des formations internationales et pensée pour toutes les beautés.</p></div>
-        <figure class="positioning-portrait"><img src="assets/pamela-positioning-v18.jpg" alt="Pamela Martins, artiste internationale en maquillage permanent" loading="lazy"><figcaption><b>PAMELA MARTINS</b><span>ARTISTE PMU · LE CANNET</span></figcaption></figure>
+        <figure class="positioning-portrait"><img src="assets/pamela-positioning-cutout.png" alt="Portrait détouré de Pamela Martins, artiste internationale en maquillage permanent" loading="lazy"><figcaption><b>PAMELA MARTINS</b><span>ARTISTE PMU · LE CANNET</span></figcaption></figure>
       </div>
       <div class="brand-grid">
         <article><span>01</span><h3 data-i18n="brandInternational">Formation internationale</h3><p data-i18n="brandInternationalCopy">Artiste formée à l’international et aux protocoles PhiAcademy, avec plus de 35 certificats et diplômes obtenus autour du monde.</p></article>
@@ -99,6 +113,7 @@
         <div class="instagram-controls" aria-label="Navigation de la galerie Instagram">
           <button type="button" data-instagram-prev aria-label="Image précédente">←</button>
           <button type="button" data-instagram-next aria-label="Image suivante">→</button>
+          <button type="button" data-instagram-pause aria-label="Mettre le carrousel en pause" aria-pressed="false">Ⅱ</button>
         </div>
       </div>
     </section>
@@ -118,16 +133,14 @@
           <img src="assets/pamela-editorial.jpg" alt="Portrait professionnel de Pamela Martins" loading="lazy">
           <figcaption><span>PM · PORTRAIT</span><b data-i18n="credentialsPortrait">Précision, écoute et naturel.</b></figcaption>
         </figure>
-        <div class="credentials-proof">
-          <figure class="credentials-phibright">
-            <img src="assets/pamela-phibright.png" alt="Pamela Martins présentant son certificat PhiBright" loading="lazy">
-            <figcaption><span>PHIACADEMY · PHIBRIGHT</span><b data-i18n="credentialsPhi">Formation PhiAcademy certifiée en éclaircissement et neutralisation labiale.</b></figcaption>
-          </figure>
-          <figure class="credentials-products">
-            <img src="assets/pamela-products-editorial.jpg" alt="Pamela Martins avec sa ligne de soins By Pamela Martins" loading="lazy">
-            <figcaption><span>UTSUKUSY · PROTOCOLES PROFESSIONNELS</span><b data-i18n="credentialsProducts">Des soins réalisés avec des produits Utsukusy sélectionnés pour leur performance professionnelle.</b></figcaption>
-          </figure>
-        </div>
+        <figure class="credentials-phibright">
+          <img src="assets/pamela-phibright.png" alt="Pamela Martins présentant son certificat PhiBright" loading="lazy">
+          <figcaption><span>PHIACADEMY · PHIBRIGHT</span><b data-i18n="credentialsPhi">Formation PhiAcademy certifiée en éclaircissement et neutralisation labiale.</b></figcaption>
+        </figure>
+        <figure class="credentials-products">
+          <img src="assets/pamela-soin-professionnel-utsukusy.png" alt="Pamela Martins présentant un soin professionnel Utsukusy" data-alt-fr="Pamela Martins présentant un soin professionnel Utsukusy" data-alt-pt="Pamela Martins apresentando um cuidado profissional da Utsukusy" loading="lazy">
+          <figcaption><span data-fr="UTSUKUSY · SOIN PROFESSIONNEL" data-pt="UTSUKUSY · CUIDADO PROFISSIONAL">UTSUKUSY · SOIN PROFESSIONNEL</span><b data-i18n="credentialsProducts">Des soins réalisés avec des produits Utsukusy sélectionnés pour leur performance professionnelle.</b></figcaption>
+        </figure>
       </div>
 
       <div class="certificate-intro">
@@ -154,7 +167,6 @@
         <figure class="certificate-card"><img src="assets/cert-microneedling-v16.jpg" alt="Certificat Microagulhamento" loading="lazy"><figcaption><span>13</span><b>Microneedling</b><small>2025 · Portugal</small></figcaption></figure>
         <figure class="certificate-card"><img src="assets/cert-self-makeup-v16.jpg" alt="Certificat Automaquiagem" loading="lazy"><figcaption><span>14</span><b>Auto-maquillage</b><small>2018 · Brésil</small></figcaption></figure>
         </div>
-        <p class="book-hint" data-fr="Glissez pour parcourir les certificats" data-pt="Deslize para ver os certificados" data-en="Swipe to browse the certificates">Glissez pour parcourir les certificats</p>
       </div>
     </section>
 
@@ -164,45 +176,41 @@
         <p data-fr="Des transformations réelles, photographiées dans des conditions comparables pour montrer la précision du travail de Pamela." data-pt="Transformações reais, fotografadas em condições comparáveis para mostrar a precisão do trabalho da Pamela." data-en="Real transformations, photographed in comparable conditions to show the precision of Pamela’s work.">Des transformations réelles, photographiées dans des conditions comparables pour montrer la précision du travail de Pamela.</p>
       </div>
       <div class="transformation-grid">
-        <article class="transformation-pair brows-focus brows-focus-portrait"><header><span>01</span><h3 data-fr="Sourcils sur mesure" data-pt="Sobrancelhas sob medida" data-en="Bespoke brows">Sourcils sur mesure</h3></header><div><figure><img src="assets/after-brows-v19.jpg" alt="Sourcils avant le soin" loading="lazy"><figcaption data-fr="AVANT" data-pt="ANTES" data-en="BEFORE">AVANT</figcaption></figure><figure><img src="assets/before-brows-v19.jpg" alt="Sourcils après le soin" loading="lazy"><figcaption data-fr="APRÈS" data-pt="DEPOIS" data-en="AFTER">APRÈS</figcaption></figure></div></article>
-        <article class="transformation-pair"><header><span>02</span><h3 data-fr="Neutralisation labiale" data-pt="Neutralização labial">Neutralisation labiale</h3></header><div><figure><img src="assets/before-lips-v19.jpg" alt="Lèvres avant la neutralisation" loading="lazy"><figcaption data-fr="AVANT" data-pt="ANTES">AVANT</figcaption></figure><figure><img src="assets/after-lips-v19.jpg" alt="Lèvres après la neutralisation" loading="lazy"><figcaption data-fr="APRÈS" data-pt="DEPOIS">APRÈS</figcaption></figure></div></article>
-        <article class="transformation-pair"><header><span>03</span><h3 data-fr="Pigmentation des lèvres" data-pt="Pigmentação labial">Pigmentation des lèvres</h3></header><div><figure><img src="assets/before-lips-side-v19.jpg" alt="Lèvres avant la pigmentation" loading="lazy"><figcaption data-fr="AVANT" data-pt="ANTES">AVANT</figcaption></figure><figure><img src="assets/after-lips-side-v19.jpg" alt="Lèvres après la pigmentation" loading="lazy"><figcaption data-fr="APRÈS" data-pt="DEPOIS">APRÈS</figcaption></figure></div></article>
-        <article class="transformation-pair"><header><span>04</span><h3 data-fr="Lip Blush naturel" data-pt="Lip Blush natural">Lip Blush naturel</h3></header><div><figure><img src="assets/before-lips-portrait-v19.jpg" alt="Visage avant le Lip Blush" loading="lazy"><figcaption data-fr="AVANT" data-pt="ANTES">AVANT</figcaption></figure><figure><img src="assets/after-lips-portrait-v19.jpg" alt="Visage après le Lip Blush" loading="lazy"><figcaption data-fr="APRÈS" data-pt="DEPOIS">APRÈS</figcaption></figure></div></article>
-        <article class="transformation-pair brows-focus brows-focus-green"><header><span>05</span><h3 data-fr="Design des sourcils" data-pt="Design de sobrancelhas" data-en="Brow design">Design des sourcils</h3></header><div><figure><img src="assets/after-brows-green-v19.jpg" alt="Sourcils avant le design" loading="lazy"><figcaption data-fr="AVANT" data-pt="ANTES" data-en="BEFORE">AVANT</figcaption></figure><figure><img src="assets/before-brows-green-v19.jpg" alt="Sourcils après le design" loading="lazy"><figcaption data-fr="APRÈS" data-pt="DEPOIS" data-en="AFTER">APRÈS</figcaption></figure></div></article>
+        <article class="transformation-pair brows-focus brows-focus-portrait"><header><span>01</span><h3 data-fr="Sourcils sur mesure" data-pt="Sobrancelhas sob medida" data-en="Bespoke brows">Sourcils sur mesure</h3></header><div class="compare-slider" data-compare-slider data-group-fr="Comparaison avant et après des sourcils" data-group-pt="Comparação antes e depois das sobrancelhas" data-group-en="Eyebrow before and after comparison" style="--compare-position:50%"><img class="compare-slider__base" src="assets/after-brows-v19.jpg" alt="Sourcils après le soin" data-alt-fr="Sourcils après le soin" data-alt-pt="Sobrancelhas depois do tratamento" data-alt-en="Brows after treatment" loading="lazy"><div class="compare-slider__overlay" aria-hidden="true"><img src="assets/before-brows-v19.jpg" alt="" loading="lazy"></div><span class="compare-slider__label compare-slider__label--before" data-fr="AVANT" data-pt="ANTES" data-en="BEFORE">AVANT</span><span class="compare-slider__label compare-slider__label--after" data-fr="APRÈS" data-pt="DEPOIS" data-en="AFTER">APRÈS</span><span class="compare-slider__divider" aria-hidden="true"><span class="compare-slider__handle">↔</span></span><input class="compare-slider__range" data-compare-range type="range" min="0" max="100" value="50" aria-label="Comparaison avant et après des sourcils" data-aria-fr="Déplacer pour comparer avant et après" data-aria-pt="Deslize para comparar antes e depois" data-aria-en="Slide to compare before and after"></div></article>
+        <article class="transformation-pair"><header><span>02</span><h3 data-fr="Neutralisation labiale" data-pt="Neutralização labial">Neutralisation labiale</h3></header><div class="compare-slider" data-compare-slider data-group-fr="Comparaison avant et après de la neutralisation labiale" data-group-pt="Comparação antes e depois da neutralização labial" data-group-en="Lip neutralization before and after comparison" style="--compare-position:50%"><img class="compare-slider__base" src="assets/after-lips-v19.jpg" alt="Lèvres après la neutralisation" data-alt-fr="Lèvres après la neutralisation" data-alt-pt="Lábios depois da neutralização" data-alt-en="Lips after neutralization" loading="lazy"><div class="compare-slider__overlay" aria-hidden="true"><img src="assets/before-lips-v19.jpg" alt="" loading="lazy"></div><span class="compare-slider__label compare-slider__label--before" data-fr="AVANT" data-pt="ANTES" data-en="BEFORE">AVANT</span><span class="compare-slider__label compare-slider__label--after" data-fr="APRÈS" data-pt="DEPOIS" data-en="AFTER">APRÈS</span><span class="compare-slider__divider" aria-hidden="true"><span class="compare-slider__handle">↔</span></span><input class="compare-slider__range" data-compare-range type="range" min="0" max="100" value="50" aria-label="Comparaison avant et après de la neutralisation labiale" data-aria-fr="Déplacer pour comparer avant et après" data-aria-pt="Deslize para comparar antes e depois" data-aria-en="Slide to compare before and after"></div></article>
+        <article class="transformation-pair"><header><span>03</span><h3 data-fr="Pigmentation des lèvres" data-pt="Pigmentação labial">Pigmentation des lèvres</h3></header><div class="compare-slider" data-compare-slider data-group-fr="Comparaison avant et après de la pigmentation des lèvres" data-group-pt="Comparação antes e depois da pigmentação labial" data-group-en="Lip pigmentation before and after comparison" style="--compare-position:50%"><img class="compare-slider__base" src="assets/after-lips-side-v19.jpg" alt="Lèvres après la pigmentation" data-alt-fr="Lèvres après la pigmentation" data-alt-pt="Lábios depois da pigmentação" data-alt-en="Lips after pigmentation" loading="lazy"><div class="compare-slider__overlay" aria-hidden="true"><img src="assets/before-lips-side-v19.jpg" alt="" loading="lazy"></div><span class="compare-slider__label compare-slider__label--before" data-fr="AVANT" data-pt="ANTES" data-en="BEFORE">AVANT</span><span class="compare-slider__label compare-slider__label--after" data-fr="APRÈS" data-pt="DEPOIS" data-en="AFTER">APRÈS</span><span class="compare-slider__divider" aria-hidden="true"><span class="compare-slider__handle">↔</span></span><input class="compare-slider__range" data-compare-range type="range" min="0" max="100" value="50" aria-label="Comparaison avant et après de la pigmentation des lèvres" data-aria-fr="Déplacer pour comparer avant et après" data-aria-pt="Deslize para comparar antes e depois" data-aria-en="Slide to compare before and after"></div></article>
+        <article class="transformation-pair"><header><span>04</span><h3 data-fr="Lip Blush naturel" data-pt="Lip Blush natural">Lip Blush naturel</h3></header><div class="compare-slider" data-compare-slider data-group-fr="Comparaison avant et après du Lip Blush naturel" data-group-pt="Comparação antes e depois do Lip Blush natural" data-group-en="Natural Lip Blush before and after comparison" style="--compare-position:50%"><img class="compare-slider__base" src="assets/after-lips-portrait-v19.jpg" alt="Visage après le Lip Blush" data-alt-fr="Visage après le Lip Blush" data-alt-pt="Rosto depois do Lip Blush" data-alt-en="Face after Lip Blush" loading="lazy"><div class="compare-slider__overlay" aria-hidden="true"><img src="assets/before-lips-portrait-v19.jpg" alt="" loading="lazy"></div><span class="compare-slider__label compare-slider__label--before" data-fr="AVANT" data-pt="ANTES" data-en="BEFORE">AVANT</span><span class="compare-slider__label compare-slider__label--after" data-fr="APRÈS" data-pt="DEPOIS" data-en="AFTER">APRÈS</span><span class="compare-slider__divider" aria-hidden="true"><span class="compare-slider__handle">↔</span></span><input class="compare-slider__range" data-compare-range type="range" min="0" max="100" value="50" aria-label="Comparaison avant et après du Lip Blush naturel" data-aria-fr="Déplacer pour comparer avant et après" data-aria-pt="Deslize para comparar antes e depois" data-aria-en="Slide to compare before and after"></div></article>
+        <article class="transformation-pair brows-focus brows-focus-green"><header><span>05</span><h3 data-fr="Design des sourcils" data-pt="Design de sobrancelhas" data-en="Eyebrow design">Design des sourcils</h3></header><div class="compare-slider" data-compare-slider data-group-fr="Comparaison avant et après des sourcils" data-group-pt="Comparação antes e depois das sobrancelhas" data-group-en="Eyebrow before and after comparison" style="--compare-position:50%"><img class="compare-slider__base" src="assets/before-brows-green-v19.jpg" alt="Sourcils après le design" data-alt-fr="Sourcils après le design" data-alt-pt="Sobrancelhas depois do design" data-alt-en="Brows after the design" loading="lazy"><div class="compare-slider__overlay" aria-hidden="true"><img src="assets/after-brows-green-v19.jpg" alt="" loading="lazy"></div><span class="compare-slider__label compare-slider__label--before" data-fr="AVANT" data-pt="ANTES" data-en="BEFORE">AVANT</span><span class="compare-slider__label compare-slider__label--after" data-fr="APRÈS" data-pt="DEPOIS" data-en="AFTER">APRÈS</span><span class="compare-slider__divider" aria-hidden="true"><span class="compare-slider__handle">↔</span></span><input class="compare-slider__range" data-compare-range type="range" min="0" max="100" value="50" aria-label="Déplacer pour comparer avant et après" data-aria-fr="Déplacer pour comparer avant et après" data-aria-pt="Deslize para comparar antes e depois" data-aria-en="Slide to compare before and after"></div></article>
+        <article class="transformation-pair brows-focus"><header><span>06</span><h3 data-fr="Restructuration des sourcils" data-pt="Redefinição das sobrancelhas" data-en="Eyebrow reshaping">Restructuration des sourcils</h3></header><div class="compare-slider" data-compare-slider data-group-fr="Comparaison avant et après de la restructuration des sourcils" data-group-pt="Comparação antes e depois da redefinição das sobrancelhas" data-group-en="Eyebrow reshaping before and after comparison" style="--compare-position:50%"><img class="compare-slider__base" src="assets/after-brows-client-v31.png" alt="Sourcils après la restructuration" data-alt-fr="Sourcils après la restructuration" data-alt-pt="Sobrancelhas depois da redefinição" data-alt-en="Brows after reshaping" loading="lazy"><div class="compare-slider__overlay" aria-hidden="true"><img src="assets/before-brows-client-v31.png" alt="" loading="lazy"></div><span class="compare-slider__label compare-slider__label--before" data-fr="AVANT" data-pt="ANTES" data-en="BEFORE">AVANT</span><span class="compare-slider__label compare-slider__label--after" data-fr="APRÈS" data-pt="DEPOIS" data-en="AFTER">APRÈS</span><span class="compare-slider__divider" aria-hidden="true"><span class="compare-slider__handle">↔</span></span><input class="compare-slider__range" data-compare-range type="range" min="0" max="100" value="50" aria-label="Déplacer pour comparer avant et après la restructuration des sourcils" data-aria-fr="Déplacer pour comparer avant et après" data-aria-pt="Deslize para comparar antes e depois" data-aria-en="Slide to compare before and after"></div></article>
       </div>
     </section>
 
-    <section class="intervention" id="pigments" aria-label="Intervention visuelle interactive">
-      <div class="color-field"><div class="iris"></div></div>
-      <div class="intervention-copy"><p data-i18n="pigmentLead">Le bon pigment ne se devine pas.</p><h2 data-i18n="pigmentTitle">Il s’observe.</h2><small data-i18n="pigmentHint">Déplacez votre curseur pour explorer la matière.</small><div class="pigment-palette" aria-label="Références de pigments"><button type="button" data-pigment="#2b1712" style="--swatch:#2b1712">Espresso</button><button type="button" data-pigment="#4a281c" style="--swatch:#4a281c">Cocoa</button><button type="button" data-pigment="#70432f" style="--swatch:#70432f">Chestnut</button><button type="button" data-pigment="#96624a" style="--swatch:#96624a">Warm Brown</button><button type="button" data-pigment="#8a7264" style="--swatch:#8a7264">Taupe</button><button type="button" data-pigment="#a56d68" style="--swatch:#a56d68">Nude Rose</button></div><p class="pigment-note" data-i18n="pigmentNote">Nuances de référence. Le pigment final est choisi après l’analyse professionnelle de la peau, du sous-ton et du résultat souhaité.</p></div>
+    <section class="intervention pigment-lab" id="pigments" aria-label="Palette de pigments">
+      <div class="pl-wrap">
+        <div class="pl-intro">
+          <p class="pl-lead" data-i18n="pigmentLead">Le bon pigment ne se devine pas.</p>
+          <h2 data-i18n="pigmentTitle">Il s’observe.</h2>
+          <small class="pl-hint" data-i18n="pigmentHint">Survolez une nuance ou touchez-la pour voir sa couleur.</small>
+        </div>
+        <div class="pl-board">
+          <div class="pl-palette" data-pl-palette></div>
+          <aside class="pl-stage" data-pl-stage aria-live="polite"></aside>
+        </div>
+        <p class="pigment-note" data-i18n="pigmentNote">Nuances de référence. Le pigment final est choisi après l’analyse professionnelle de la peau, du sous-ton et du résultat souhaité.</p>
+      </div>
     </section>
 
     <section class="prices" id="tarifs">
       <p class="section-index" data-i18n="pricesLabel">06 / TARIFS</p>
       <h2 data-i18n="pricesTitle">Des prix clairs avant de réserver</h2>
       <p class="price-note" data-i18n="priceNote">Maquillage permanent lèvres et sourcils sur devis personnalisé.</p>
-      <div class="price-columns">
-        <details open><summary data-i18n="priceEyes">Cils & sourcils</summary><ul><li data-fr="Épilation sourcils + teinture <b>30 €</b>" data-pt="Depilação de sobrancelhas + tintura <b>30 €</b>">Épilation sourcils + teinture <b>30 €</b></li><li data-fr="Browlift + entretien <b>40 €</b>" data-pt="Browlift + manutenção <b>40 €</b>">Browlift + entretien <b>40 €</b></li><li data-fr="Browlift + entretien + teinture <b>50 €</b>" data-pt="Browlift + manutenção + tintura <b>50 €</b>">Browlift + entretien + teinture <b>50 €</b></li><li data-fr="Lash lift <b>45 €</b>" data-pt="Lash lift <b>45 €</b>">Lash lift <b>45 €</b></li><li data-fr="Lash lift + coloration <b>50 €</b>" data-pt="Lash lift + tintura <b>50 €</b>">Lash lift + coloration <b>50 €</b></li><li data-fr="Lash lift + coloration + browlift <b>80 €</b>" data-pt="Lash lift + tintura + browlift <b>80 €</b>">Lash lift + coloration + browlift <b>80 €</b></li></ul></details>
-        <details><summary data-i18n="priceFace">Visage & beauté</summary><ul>
-          <li data-fr="Microneedling <b>120 €</b>" data-pt="Microagulhamento <b>120 €</b>">Microneedling <b>120 €</b></li>
-          <li data-fr="Baby Glow <b>100 €</b>" data-pt="Baby Glow <b>100 €</b>">Baby Glow <b>100 €</b></li>
-          <li data-fr="Hidragloss / Ultra Gloss <b>Sur consultation</b>" data-pt="Hidragloss / Ultra Gloss <b>Sob consulta</b>">Hidragloss / Ultra Gloss <b>Sur consultation</b></li>
-          <li data-fr="Nettoyage facial classique <b>80 €</b>" data-pt="Limpeza facial clássica <b>80 €</b>">Nettoyage facial classique <b>80 €</b></li>
-          <li data-fr="Nettoyage Hydra purifiant <b>100 €</b>" data-pt="Limpeza Hydra purificante <b>100 €</b>">Nettoyage Hydra purifiant <b>100 €</b></li>
-          <li data-fr="Manucure flash + couleur <b>25 €</b>" data-pt="Manicure express + cor <b>25 €</b>">Manucure flash + couleur <b>25 €</b></li>
-          <li data-fr="Soin complet maillot + vajacial <b>60 €</b>" data-pt="Cuidado completo do biquíni + vajacial <b>60 €</b>">Soin complet maillot + vajacial <b>60 €</b></li>
-          <li data-fr="Maillot intégral + vajacial <b>80 €</b>" data-pt="Biquíni completo + vajacial <b>80 €</b>">Maillot intégral + vajacial <b>80 €</b></li>
-        </ul></details>
-        <details><summary data-i18n="priceSugaring">Épilation au sucre</summary><ul><li data-fr="Lèvre supérieure <b>10 €</b>" data-pt="Lábio superior <b>10 €</b>">Lèvre supérieure <b>10 €</b></li><li data-fr="Sourcils sans forme <b>15 €</b>" data-pt="Sobrancelhas sem design <b>15 €</b>">Sourcils sans forme <b>15 €</b></li><li data-fr="Aisselles <b>15 €</b>" data-pt="Axilas <b>15 €</b>">Aisselles <b>15 €</b></li><li data-fr="Demi-bras <b>25 €</b>" data-pt="Meio braço <b>25 €</b>">Demi-bras <b>25 €</b></li><li data-fr="Maillot classique / échancré / intégral <b>20 / 30 / 40 €</b>" data-pt="Biquíni clássico / cavado / completo <b>20 / 30 / 40 €</b>">Maillot classique / échancré / intégral <b>20 / 30 / 40 €</b></li><li data-fr="Demi-jambes / jambes entières <b>30 / 45 €</b>" data-pt="Meia perna / pernas inteiras <b>30 / 45 €</b>">Demi-jambes / jambes entières <b>30 / 45 €</b></li><li data-fr="Forfaits corps <b>79 à 120 €</b>" data-pt="Pacotes corporais <b>79 a 120 €</b>">Forfaits corps <b>79 à 120 €</b></li></ul></details>
-        <details><summary data-i18n="priceWax">Cire chaude</summary><ul><li data-fr="Lèvre supérieure <b>10 €</b>" data-pt="Lábio superior <b>10 €</b>">Lèvre supérieure <b>10 €</b></li><li data-fr="Aisselles <b>12 €</b>" data-pt="Axilas <b>12 €</b>">Aisselles <b>12 €</b></li><li data-fr="Demi-bras / bras entiers <b>20 / 25 €</b>" data-pt="Meio braço / braços inteiros <b>20 / 25 €</b>">Demi-bras / bras entiers <b>20 / 25 €</b></li><li data-fr="Maillot classique / échancré / intégral <b>20 / 25 / 40 €</b>" data-pt="Biquíni clássico / cavado / completo <b>20 / 25 / 40 €</b>">Maillot classique / échancré / intégral <b>20 / 25 / 40 €</b></li><li data-fr="Demi-jambes / jambes entières <b>25 / 40 €</b>" data-pt="Meia perna / pernas inteiras <b>25 / 40 €</b>">Demi-jambes / jambes entières <b>25 / 40 €</b></li></ul></details>
-        <details><summary data-i18n="priceMen">Épilation homme</summary><ul><li data-fr="Sourcils <b>20 €</b>" data-pt="Sobrancelhas <b>20 €</b>">Sourcils <b>20 €</b></li><li data-fr="Torse / ventre <b>30 €</b>" data-pt="Tórax / abdômen <b>30 €</b>">Torse / ventre <b>30 €</b></li><li data-fr="Dos <b>50 €</b>" data-pt="Costas <b>50 €</b>">Dos <b>50 €</b></li><li data-fr="Bras entiers <b>35 €</b>" data-pt="Braços inteiros <b>35 €</b>">Bras entiers <b>35 €</b></li><li data-fr="Maillot classique à intégral + SIF <b>40 à 70 €</b>" data-pt="Biquíni clássico a completo + interglúteo <b>40 a 70 €</b>">Maillot classique à intégral + SIF <b>40 à 70 €</b></li><li data-fr="Jambes entières <b>50 €</b>" data-pt="Pernas inteiras <b>50 €</b>">Jambes entières <b>50 €</b></li></ul></details>
-      </div>
+      <div class="price-lab" data-price-lab></div>
       <p class="price-disclaimer" data-i18n="priceDisclaimer">Tarifs issus du flyer actuel. La version finale sera publiée après confirmation de Pamela.</p>
     </section>
 
     <section class="about" id="diversite">
       <div><p class="section-index" data-i18n="diversityLabel">06 / BEAUTÉ PLURIELLE</p><h2 data-i18n="diversityTitle">Chaque peau mérite une lecture précise.</h2><p class="about-copy" data-i18n="diversityCopy">Pamela accueille toutes les peaux, toutes les carnations, toutes les origines et toutes les ethnies — françaises, brésiliennes, capverdiennes, portugaises et bien d’autres.</p></div>
-      <img class="diversity-image" src="assets/diversity-model.png" alt="Portrait beauté éditorial mettant en valeur une carnation naturelle" loading="lazy">
+      <img class="diversity-image" src="assets/diversity-all-skins-v18.png" alt="Quatre femmes de différentes carnations, réunies dans un portrait éditorial" loading="lazy">
     </section>
 
     <section class="faq" id="questions">
@@ -222,7 +230,7 @@
   </main>
 
   <footer class="site-footer">
-    <a class="footer-mark" href="#top" aria-label="Retour en haut"><img src="assets/logo-footer-v15.png" alt="Pamela Martins PMU — Votre beauté, notre expertise"></a>
+    <a class="footer-mark footer-signature" href="#top" aria-label="Pamela Martins PMU — retour en haut"><img class="brand-logo" src="assets/logo-horizontal-slogan.png" alt="Pamela Martins PMU — Votre beauté, notre expertise" width="1700" height="426" loading="lazy"></a>
     <p>93 Boulevard Sadi Carnot · 06400 Cannes</p>
     <a class="footer-instagram" href="https://www.instagram.com/pamela.martins.pmu/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Pamela Martins PMU">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.7" r="1"></circle></svg>
@@ -238,5 +246,6 @@
     <p class="demo-label" data-i18n="demoLabel">DÉMO · aucun message n’est envoyé</p>
   </aside>
   <script src="script.js"></script>
+  <script src="refresh.js"></script>
 </body>
 </html>

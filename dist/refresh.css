@@ -1,0 +1,165 @@
+/* Refresh — official logo, readable Parcours text, pigment palette, interactive prices, centered closing call to action. Loaded last. */
+@property --pg{syntax:"<color>";inherits:true;initial-value:#6e4a32}
+
+/* ---------- Official logo ---------- */
+body .topbar .brand-signature{display:flex!important;align-items:center!important;flex:0 0 auto!important;width:auto!important;max-width:none!important;min-width:0!important;gap:0!important;padding:0!important;border:0!important}
+body .topbar .brand-logo{display:block!important;width:auto!important;height:46px!important;max-width:none!important;object-fit:contain}
+body .footer-signature{display:flex!important;justify-content:center!important;width:auto!important;max-width:none!important;border:0!important;padding:0!important}
+body .footer-signature .brand-logo{display:block!important;width:min(440px,78vw)!important;height:auto!important}
+body .intro-mark .intro-emblem{width:min(190px,48vw)!important;height:auto!important}
+@media(max-width:1100px){body .topbar .brand-logo{height:40px!important}}
+@media(max-width:760px){body .topbar .brand-logo{height:30px!important;max-width:44vw!important}}
+@media(max-width:420px){body .topbar .brand-logo{height:26px!important;max-width:40vw!important}}
+
+/* ---------- Parcours & certifications: larger type, tighter layout ---------- */
+.credentials-heading{grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr)!important;gap:clamp(28px,4vw,64px)!important}
+.credentials .section-index{font-size:15px!important;letter-spacing:.16em!important}
+.credentials-kicker{margin:26px 0 16px!important;font-size:15px!important;letter-spacing:.22em!important}
+.credentials-lead{padding-left:24px!important;font-size:clamp(18px,1.55vw,22px)!important;line-height:1.65!important;color:rgba(32,27,22,.84)!important}
+.credentials-summary{gap:26px!important}
+.credentials-stat{gap:20px!important}
+.credentials-stat b{font-size:clamp(76px,7vw,104px)!important}
+.credentials-stat span{max-width:300px!important;font-size:14px!important;line-height:1.5!important;letter-spacing:.1em!important;color:rgba(32,27,22,.82)!important}
+.certificate-intro p{font-size:14px!important;letter-spacing:.2em!important}
+@media(max-width:900px){
+  .credentials-heading{grid-template-columns:1fr!important;gap:28px!important}
+  .credentials .section-index{font-size:13px!important}
+  .credentials-kicker{font-size:12.5px!important;letter-spacing:.16em!important}
+  .credentials-lead{font-size:17px!important}
+  .credentials-stat span{font-size:12.5px!important}
+}
+
+/* ---------- Before / after intro text ---------- */
+.transformations-heading>p{font-size:clamp(19px,1.7vw,24px)!important;line-height:1.65!important;color:#3a322a!important;padding-left:26px!important;max-width:560px}
+@media(max-width:900px){.transformations-heading>p{font-size:18px!important;padding-left:18px!important}}
+
+/* ---------- Pigment palette ---------- */
+.intervention.pigment-lab{display:block!important;position:relative!important;height:auto!important;min-height:0!important;overflow:hidden!important;color:#2b241c!important;
+  padding:clamp(64px,8vw,120px) clamp(22px,6vw,96px)!important;
+  background:radial-gradient(circle at 88% 18%,rgba(255,250,238,.9) 0,rgba(255,250,238,0) 46%),linear-gradient(135deg,#f3e9d8 0%,#ead9bd 100%)!important}
+.pigment-lab::before{content:"";position:absolute;right:-12vw;top:-14vw;width:46vw;height:46vw;border-radius:50%;border:1px solid rgba(143,107,53,.18);box-shadow:0 0 0 4vw rgba(143,107,53,.035),0 0 0 8vw rgba(143,107,53,.025);pointer-events:none}
+@media(max-width:760px){#pigments.pigment-lab{display:block!important}}
+.pl-wrap{position:relative;z-index:1;max-width:1320px;margin:0 auto}
+.pl-intro{max-width:760px}
+.pl-lead{margin:0 0 6px!important;font:500 clamp(17px,1.5vw,20px)/1.5 "Manrope",sans-serif!important;color:#4e4234!important}
+.pigment-lab h2{margin:0!important;font:500 clamp(60px,9vw,128px)/.9 "Cormorant Garamond","Instrument Serif",serif!important;letter-spacing:-.03em;color:#8f6b35!important}
+.pl-hint{display:block;margin-top:18px;font:500 16px/1.5 "Manrope",sans-serif;color:#5b4c3d;opacity:1!important}
+.pl-board{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:clamp(28px,4vw,64px);margin-top:clamp(36px,5vw,64px);align-items:start}
+.pl-palette{display:grid;gap:clamp(26px,3vw,40px)}
+.pl-group h3{margin:0 0 16px;font:600 12px/1 "Manrope",sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#8c6d40;display:flex;align-items:center;gap:14px}
+.pl-group h3::after{content:"";flex:1;height:1px;background:rgba(140,109,64,.32)}
+.pl-swatches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(12px,1.6vw,22px) clamp(8px,1.2vw,16px)}
+.pl-swatch{display:flex;flex-direction:column;align-items:center;gap:10px;padding:6px 2px 4px;border:0;background:none;cursor:pointer;color:#2b241c;font:600 13.5px/1.25 "Manrope",sans-serif;text-align:center;border-radius:14px;-webkit-tap-highlight-color:transparent}
+.pl-swatch i{position:relative;display:block;width:clamp(52px,5.4vw,76px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 26%,color-mix(in srgb,var(--pg) 55%,#fff) 0,var(--pg) 46%,color-mix(in srgb,var(--pg) 78%,#000) 100%);box-shadow:0 10px 22px color-mix(in srgb,var(--pg) 32%,transparent),inset 0 0 0 1px rgba(255,255,255,.32);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
+.pl-swatch i::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:2px solid #b58d4f;opacity:0;transform:scale(.86);transition:opacity .25s ease,transform .35s cubic-bezier(.2,.8,.2,1)}
+.pl-swatch:hover i{transform:translateY(-4px) scale(1.06)}
+.pl-swatch.active i{transform:scale(1.08);box-shadow:0 16px 30px color-mix(in srgb,var(--pg) 42%,transparent),inset 0 0 0 1px rgba(255,255,255,.4)}
+.pl-swatch.active i::after{opacity:1;transform:scale(1)}
+.pl-swatch.active span{color:#7a5a2a}
+.pl-swatch:focus-visible{outline:2px solid #9b743d;outline-offset:3px}
+.pl-stage{position:sticky;top:112px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(24px,3vw,40px);border-radius:28px;border:1px solid rgba(143,107,53,.3);background:linear-gradient(160deg,rgba(255,252,246,.88),rgba(255,247,233,.6));box-shadow:0 26px 60px rgba(81,58,31,.14);backdrop-filter:blur(6px);transition:--pg .5s ease}
+.pl-orb{position:relative;width:min(100%,280px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 26%,color-mix(in srgb,var(--pg) 38%,#fff) 0,var(--pg) 44%,color-mix(in srgb,var(--pg) 70%,#000) 100%);box-shadow:0 0 0 14px color-mix(in srgb,var(--pg) 14%,transparent),0 0 0 32px color-mix(in srgb,var(--pg) 7%,transparent),0 30px 50px color-mix(in srgb,var(--pg) 40%,transparent);animation:plPop .55s cubic-bezier(.2,.8,.2,1)}
+.pl-orb::after{content:"";position:absolute;left:18%;top:12%;width:34%;height:22%;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.55),transparent 70%);filter:blur(2px)}
+@keyframes plPop{from{transform:scale(.88);opacity:.6}to{transform:none;opacity:1}}
+.pl-kicker{margin:44px 0 6px!important;font:600 11.5px/1.3 "Manrope",sans-serif!important;letter-spacing:.22em;text-transform:uppercase;color:#8c6d40!important}
+.pl-name{margin:0;font:500 clamp(36px,3.4vw,48px)/1 "Cormorant Garamond",serif;color:#2c241a}
+.pl-tone{margin:10px 0 0!important;font:500 15px/1.4 "Manrope",sans-serif!important;color:#5b4c3d!important}
+.pl-tone b{color:#2c241a}
+.pl-skins{display:flex;gap:10px;margin-top:22px}
+.pl-skins span{position:relative;width:46px;height:46px;border-radius:50%;background:var(--skin);box-shadow:inset 0 0 0 1px rgba(60,40,20,.14)}
+.pl-skins span::after{content:"";position:absolute;inset:11px;border-radius:50%;background:color-mix(in srgb,var(--pg) 62%,var(--skin));transition:background .5s ease}
+.pl-heal{margin:12px 0 0!important;font:500 12.5px/1.5 "Manrope",sans-serif!important;color:#6a5b4a!important;max-width:30ch}
+.pigment-lab .pigment-note{max-width:720px;margin:clamp(30px,4vw,52px) 0 0!important;font:500 15px/1.65 "Manrope",sans-serif!important;color:#3a3026!important}
+@media(max-width:980px){
+  .pl-board{grid-template-columns:1fr}
+  .pl-stage{position:relative;top:auto;order:-1}
+  .pl-orb{width:min(62%,210px)}
+}
+@media(max-width:560px){
+  .pl-swatches{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pl-swatch{font-size:13px}
+  .pl-swatch i{width:60px}
+  .pl-orb{width:min(58%,180px)}
+  .pl-kicker{margin-top:34px!important}
+}
+
+/* ---------- Interactive prices ---------- */
+.prices .price-lab{margin-top:clamp(28px,4vw,48px)}
+.pr-tabs{display:flex;flex-wrap:wrap;gap:10px}
+.pr-tab{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border:1px solid rgba(146,111,61,.4);border-radius:999px;background:rgba(255,255,255,.55);color:#4a3a27;font:600 14.5px/1 "Manrope",sans-serif;cursor:pointer;transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease}
+.pr-tab:hover{background:#fff;border-color:#b58d4f;transform:translateY(-2px)}
+.pr-tab.active{background:#2c241a;border-color:#2c241a;color:#f7efe0;box-shadow:0 12px 26px rgba(44,36,26,.22)}
+.pr-tab em{display:grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:#c8a66b;color:#21190f;font:700 11px/1 "Manrope",sans-serif;font-style:normal}
+.pr-tab:focus-visible,.pr-card:focus-visible{outline:2px solid #9b743d;outline-offset:3px}
+.pr-hint{margin:20px 0 0!important;font:500 15px/1.5 "Manrope",sans-serif!important;color:rgba(43,36,28,.68)!important}
+.pr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:16px;margin-top:22px}
+.pr-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:150px;padding:24px 24px 22px;text-align:left;border:1px solid rgba(146,111,61,.28);border-radius:18px;background:rgba(255,255,255,.7);color:#2c241a;cursor:pointer;box-shadow:0 10px 26px rgba(81,58,31,.06);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,border-color .3s ease,background .3s ease;animation:prIn .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*45ms);-webkit-tap-highlight-color:transparent}
+.pr-card:hover{transform:translateY(-5px);border-color:#b58d4f;background:#fff;box-shadow:0 22px 44px rgba(81,58,31,.14)}
+.pr-card:active{transform:translateY(-1px) scale(.99)}
+.pr-name{padding-right:40px;font:500 clamp(23px,2vw,28px)/1.12 "Cormorant Garamond",serif}
+.pr-price{font:600 clamp(32px,2.8vw,40px)/1 "Cormorant Garamond",serif;color:#8d6c3c}
+.pr-card.consult .pr-price{font-size:20px;font-family:"Manrope",sans-serif;font-weight:600;letter-spacing:.02em}
+.pr-check{position:absolute;top:20px;right:20px;width:30px;height:30px;border-radius:50%;border:1px solid rgba(146,111,61,.5);background:transparent;transition:background .25s ease,border-color .25s ease,transform .3s ease}
+.pr-check::before,.pr-check::after{content:"";position:absolute;left:50%;top:50%;background:#8f6c39;transition:transform .3s ease,background .25s ease}
+.pr-check::before{width:12px;height:1.5px;transform:translate(-50%,-50%)}
+.pr-check::after{width:1.5px;height:12px;transform:translate(-50%,-50%)}
+.pr-card.selected{border-color:#a98645;background:linear-gradient(160deg,#fffaf0,#f6e8cc);box-shadow:0 18px 40px rgba(143,107,53,.2)}
+.pr-card.selected .pr-check{background:#c8a66b;border-color:#c8a66b;transform:rotate(360deg)}
+.pr-card.selected .pr-check::before{width:6px;height:2px;background:#21190f;transform:translate(-90%,40%) rotate(45deg);transform-origin:right center}
+.pr-card.selected .pr-check::after{width:2px;height:12px;background:#21190f;transform:translate(60%,-65%) rotate(45deg)}
+@keyframes prIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pr-summary{position:sticky;bottom:16px;z-index:5;display:none;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:26px;padding:18px 22px;border-radius:20px;background:#2c241a;color:#f7efe0;box-shadow:0 22px 50px rgba(44,36,26,.34)}
+.pr-summary.show{display:flex;animation:prIn .4s ease both}
+.pr-total{display:flex;flex-direction:column;gap:6px}
+.pr-total span{font:600 12px/1.2 "Manrope",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#d7bf92}
+.pr-total strong{font:600 clamp(30px,3vw,40px)/1 "Cormorant Garamond",serif;color:#fff6e4}
+.pr-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pr-clear{padding:12px 6px;border:0;background:none;color:#d7bf92;font:600 14px/1 "Manrope",sans-serif;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.pr-wa{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;background:#c8a66b;color:#21190f!important;font:700 15px/1 "Manrope",sans-serif;text-decoration:none;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
+.pr-wa:hover{background:#dcc08a;transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.3)}
+@media(max-width:560px){
+  .pr-tabs{flex-wrap:nowrap;overflow-x:auto;margin-inline:-20px;padding:2px 20px 8px;scrollbar-width:none}
+  .pr-tabs::-webkit-scrollbar{display:none}
+  .pr-tab{flex:0 0 auto;padding:12px 18px;font-size:14px}
+  .pr-grid{grid-template-columns:1fr;gap:12px}
+  .pr-card{min-height:0;flex-direction:row;align-items:center;gap:14px;padding:18px 66px 18px 18px}
+  .pr-name{flex:1;padding-right:0;font-size:22px}
+  .pr-price{font-size:28px;white-space:nowrap}
+  .pr-card.consult .pr-price{font-size:15px}
+  .pr-check{top:50%;right:18px;margin-top:-15px}
+  .pr-summary{bottom:10px;padding:14px 16px;border-radius:16px}
+  .pr-actions{width:100%;justify-content:space-between}
+  .pr-wa{flex:1;min-height:48px;padding:0 18px}
+}
+@media(prefers-reduced-motion:reduce){.pr-card,.pl-orb,.pr-summary.show{animation:none!important}.pr-card,.pr-tab,.pl-swatch i{transition:none!important}}
+
+/* ---------- Closing call to action: centered, larger buttons ---------- */
+body .cta{text-align:center!important;display:flex!important;flex-direction:column!important;align-items:center!important}
+body .cta::before{right:50%!important;margin-right:-195px}
+body .cta>p{font-size:14px!important;letter-spacing:.22em!important}
+body .cta h2{max-width:14ch!important;margin:18px auto 40px!important;font-size:clamp(60px,9vw,128px)!important}
+body .cta>div{justify-content:center!important;align-items:center!important;gap:18px!important;flex-direction:row!important;flex-wrap:wrap!important}
+body .cta>div>a,body .cta .booking{position:relative!important;overflow:hidden!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:12px!important;min-height:68px!important;padding:0 40px!important;border-radius:999px!important;font:700 clamp(15px,1.3vw,18px)/1.2 "Manrope",sans-serif!important;letter-spacing:.03em!important;text-decoration:none!important;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,background .3s ease,color .3s ease,border-color .3s ease!important}
+body .cta .booking{border:1px solid #c8a66b!important;background:#c8a66b!important;color:#21190f!important;box-shadow:0 16px 36px rgba(120,86,40,.3)!important}
+body .cta .booking::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);transition:left .7s ease}
+body .cta .booking:hover::before{left:130%}
+body .cta .booking::after{content:"↗";font-size:1.15em;transition:transform .3s ease}
+body .cta .booking:hover{transform:translateY(-4px) scale(1.03)!important;background:#d6b676!important;box-shadow:0 24px 48px rgba(120,86,40,.4)!important}
+body .cta .booking:hover::after{transform:translate(3px,-3px)}
+body .cta>div>a:not(.booking){border:1.5px solid #c8a66b!important;background:#2c241a!important;color:#f6ecd8!important;box-shadow:0 12px 28px rgba(0,0,0,.22)!important}
+body .cta>div>a:not(.booking)::after{content:"→";transition:transform .3s ease}
+body .cta>div>a:not(.booking):hover{background:#f6ecd8!important;border-color:#f6ecd8!important;color:#2c241a!important;transform:translateY(-4px) scale(1.03)!important;box-shadow:0 20px 40px rgba(0,0,0,.35)!important;outline:0}
+body .cta>div>a:not(.booking):hover::after{transform:translateX(5px)}
+body .cta>div>a:active{transform:translateY(-1px) scale(.98)!important}
+body .cta>div>a:focus-visible{outline:3px solid #f0d8aa!important;outline-offset:4px!important}
+@media(max-width:760px){
+  body .cta{padding:72px 22px 80px!important}
+  body .cta>p{font-size:11px!important}
+  body .cta h2{font-size:clamp(52px,15vw,72px)!important;margin-bottom:30px!important}
+  body .cta>div{flex-direction:column!important;width:100%!important;gap:14px!important}
+  body .cta>div>a,body .cta .booking{width:100%!important;max-width:420px!important;min-height:62px!important;padding:0 24px!important;font-size:15.5px!important}
+}
+
+/* Header band over light sections */
+body .topbar{transition:background .3s ease,backdrop-filter .3s ease}
+body .topbar.on-light{background:rgba(36,29,22,.92)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
