@@ -49,12 +49,12 @@ const renderPalette=()=>{
 const renderStage=()=>{
   if(!stage)return;const l=currentLang();const p=selected;
   stage.style.setProperty('--pg',p.hex);
-  stage.innerHTML=`<div class="pl-orb" aria-hidden="true"></div>
+  stage.innerHTML=`<div class="pl-orb" aria-hidden="true"></div><div class="pl-info">
     <p class="pl-kicker">${esc(pick(T[p.group],l))} · ${esc(pick(T.shade,l))} ${String(p.id+1).padStart(2,'0')}</p>
     <h3 class="pl-name">${esc(pick(p.name,l))}</h3>
     <p class="pl-tone">${esc(pick(T.undertone,l))} · <b>${esc(pick(T[p.tone],l))}</b></p>
     <div class="pl-skins" aria-hidden="true">${SKINS.map(s=>`<span style="--skin:${s}"></span>`).join('')}</div>
-    <p class="pl-heal">${esc(pick(T.heal,l))}</p>`;
+    <p class="pl-heal">${esc(pick(T.heal,l))}</p></div>`;
 };
 const choose=p=>{
   if(p===selected)return;selected=p;
@@ -209,3 +209,13 @@ new MutationObserver(renderAll).observe(document.documentElement,{attributes:tru
 (()=>{const bar=document.querySelector('.topbar'),hero=document.querySelector('.hero');if(!bar||!hero)return;
 const update=()=>bar.classList.toggle('on-light',scrollY>Math.max(120,hero.offsetHeight-bar.offsetHeight));
 addEventListener('scroll',update,{passive:true});update()})();
+
+/* Phone: services as a swipeable carousel with dots */
+(()=>{const sc=document.querySelector('.services .service-cards');if(!sc)return;
+const cards=[...sc.querySelectorAll('.service-card')];if(cards.length<2)return;
+const dots=document.createElement('div');dots.className='sc-dots';
+const goTo=i=>{const c=cards[i];sc.scrollTo({left:c.getBoundingClientRect().left-sc.getBoundingClientRect().left+sc.scrollLeft-20,behavior:'smooth'})};
+cards.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`${i+1} / ${cards.length}`);b.addEventListener('click',()=>goTo(i));dots.appendChild(b)});
+sc.after(dots);
+const sync=()=>{const left=sc.getBoundingClientRect().left+20;let best=0,d=1e9;cards.forEach((c,i)=>{const x=Math.abs(c.getBoundingClientRect().left-left);if(x<d){d=x;best=i}});[...dots.children].forEach((b,i)=>b.classList.toggle('on',i===best))};
+sc.addEventListener('scroll',()=>requestAnimationFrame(sync),{passive:true});addEventListener('resize',sync);sync();})();

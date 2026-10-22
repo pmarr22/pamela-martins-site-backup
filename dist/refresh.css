@@ -292,3 +292,27 @@ body .instagram-cta svg{width:26px!important;height:26px!important}
   .pr-price{font-size:30px}
   .pr-check{width:32px;height:32px;top:50%;right:18px;margin-top:-16px}
 }
+
+/* ---------- Pigment stage: orb + info column (fixes squeezed text on phones) ---------- */
+.pl-info{display:contents}
+@media(max-width:980px){
+  .pl-info{display:flex;flex-direction:column;flex:1;min-width:0;text-align:left}
+  .pl-stage{padding:14px 16px!important}
+  .pl-orb{flex:0 0 76px!important;width:76px!important;box-shadow:0 0 0 5px color-mix(in srgb,var(--pg) 16%,transparent),0 8px 16px color-mix(in srgb,var(--pg) 40%,transparent)}
+  .pl-info .pl-kicker{white-space:nowrap;font-size:10px!important;letter-spacing:.14em!important;margin:0!important}
+  .pl-info .pl-name{font-size:32px;line-height:1;margin:4px 0 0!important}
+  .pl-info .pl-tone{margin:4px 0 0!important;font-size:13.5px!important}
+  .pl-info .pl-skins{display:flex;gap:8px;margin-top:10px}
+  .pl-info .pl-skins span{width:30px;height:30px}
+  .pl-info .pl-skins span::after{inset:7px}
+  .pl-info .pl-heal{display:none}
+}
+.sc-dots{display:none}
+@media(max-width:760px){
+  body .services .service-cards{display:flex!important;grid-template-columns:none!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;gap:12px!important;margin-inline:-20px!important;padding:0 20px 8px!important;scroll-padding-inline:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  body .services .service-cards::-webkit-scrollbar{display:none}
+  body .services .service-card{flex:0 0 78vw!important;width:78vw!important;max-width:340px;height:clamp(380px,112vw,460px)!important;scroll-snap-align:start!important}
+  .sc-dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+  .sc-dots button{width:8px;height:8px;padding:0;border:0;border-radius:99px;background:rgba(143,107,53,.3);transition:width .3s ease,background .3s ease}
+  .sc-dots button.on{width:26px;background:#a98645}
+}
