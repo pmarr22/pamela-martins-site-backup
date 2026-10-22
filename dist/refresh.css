@@ -254,3 +254,41 @@ body .topbar .booking:hover::before,body .cta>div>a:hover::before,body .pr-wa:ho
 @keyframes btnShine{0%,62%{left:-80%}100%{left:140%}}
 @keyframes btnShineNow{from{left:-80%}to{left:140%}}
 @media(prefers-reduced-motion:reduce){body .topbar .booking::before,body .cta>div>a::before,body .pr-wa::before,body .faq-ask a::before,body .hero .discover::before{animation:none!important;display:none}}
+
+/* ---------- Larger section labels and lead text, tighter columns ---------- */
+body .section-index{font-size:14px!important;letter-spacing:.2em!important}
+body .services-heading .lead,body .instagram-intro>p,body .about-copy,body .prices .price-note,body .position-manifesto{font-size:clamp(18px,1.5vw,22px)!important;line-height:1.65!important;color:#2f2820!important}
+body .services-heading .lead{max-width:600px!important;padding-left:24px!important}
+body .services-heading{grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr)!important;gap:clamp(28px,4vw,64px)!important}
+body .instagram-heading{grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr)!important;gap:clamp(28px,4vw,64px)!important}
+body .instagram-intro>p{max-width:560px!important}
+body .instagram-cta{font-size:17px!important;gap:14px!important;padding-bottom:12px!important}
+body .instagram-cta svg{width:26px!important;height:26px!important}
+@media(max-width:900px){
+  body .services-heading,body .instagram-heading{grid-template-columns:1fr!important}
+  body .section-index{font-size:12.5px!important}
+  body .services-heading .lead,body .instagram-intro>p,body .about-copy,body .prices .price-note{font-size:17px!important}
+}
+
+/* ---------- Prices: bigger cards and clearer category header ---------- */
+.pr-tabs{gap:12px}
+.pr-tab{padding:16px 28px;font-size:16px}
+.pr-meta{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:34px;padding-bottom:16px;border-bottom:1px solid rgba(146,111,61,.3)}
+.pr-meta h3{margin:0;font:500 clamp(38px,4vw,58px)/1 "Cormorant Garamond",serif;color:#2c241a}
+.pr-meta span{font:600 13px/1 "Manrope",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8c6d40}
+.pr-hint{font-size:17px!important}
+.pr-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:20px}
+.pr-card{min-height:200px;padding:30px 30px 26px;border-radius:22px}
+.pr-name{padding-right:48px;font-size:clamp(28px,2.4vw,34px)}
+.pr-price{font-size:clamp(46px,4vw,60px)}
+.pr-card.consult .pr-price{font-size:22px}
+.pr-check{top:26px;right:26px;width:36px;height:36px}
+.pr-summary{padding:22px 28px}
+@media(max-width:560px){
+  .pr-meta{margin-top:22px}
+  .pr-meta h3{font-size:36px}
+  .pr-card{min-height:0;padding:18px 66px 18px 18px}
+  .pr-name{font-size:23px}
+  .pr-price{font-size:30px}
+  .pr-check{width:32px;height:32px;top:50%;right:18px;margin-top:-16px}
+}

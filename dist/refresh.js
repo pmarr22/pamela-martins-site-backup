@@ -144,6 +144,7 @@ const renderPrices=()=>{
     <div class="pr-tabs" role="tablist" aria-label="${esc(pick(E('Catégories de tarifs','Categorias de preços','Price categories'),l))}">
       ${CATS.map(c=>{const n=c.items.filter(i=>picked.has(i.key)).length;return `<button type="button" role="tab" class="pr-tab${c.id===activeCat?' active':''}" data-cat="${c.id}" aria-selected="${c.id===activeCat}">${esc(pick(c.label,l))}${n?`<em>${n}</em>`:''}</button>`}).join('')}
     </div>
+    <div class="pr-meta"><h3>${esc(pick(cat.label,l))}</h3><span>${cat.items.length} ${esc(pick(P.services,l)[cat.items.length>1?1:0])} · ${esc(pick(P.from,l))} ${Math.min(...cat.items.map(i=>typeof i.price==='number'?i.price:parseInt(i.price,10)).filter(n=>n>0))} €</span></div>
     <p class="pr-hint">${esc(pick(P.hint,l))}</p>
     <div class="pr-grid" role="tabpanel">
       ${cat.items.map((it,i)=>{const on=picked.has(it.key);return `<button type="button" class="pr-card${on?' selected':''}${it.price==null?' consult':''}" data-key="${it.key}" aria-pressed="${on}" aria-label="${esc(pick(it.name,l))} — ${esc(priceText(it,l))}. ${esc(pick(on?P.remove:P.select,l))}" style="--i:${i}"><span class="pr-name">${esc(pick(it.name,l))}</span><span class="pr-price">${esc(priceText(it,l))}</span><span class="pr-check" aria-hidden="true"></span></button>`}).join('')}

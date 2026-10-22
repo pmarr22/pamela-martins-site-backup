@@ -204,7 +204,7 @@ if(instagramTrack&&instagramCarousel){
       if(target>=maxScroll){target=maxScroll;instagramDirection=-1}
       else if(target<=0){target=0;instagramDirection=1}
       instagramTrack.scrollTo({left:target,behavior:'smooth'});
-    },4200);
+    },2200);
   }
 }
 const revealTargets=$$('main section:not(.hero) .section-index, main section:not(.hero) h2, main section:not(.hero) .lead, .service-card, .results-heading p, .brand-grid article, .credentials-lead, .credentials-stat, .credentials-story figure, .certificate-intro, .journey li, .price-note, .price-columns details, .about-copy, .diversity-image, .faq details, .cta p, .cta a, .gallery-intro, .gallery-tabs button');
