@@ -59,7 +59,7 @@ const renderStage=()=>{
 const choose=p=>{
   if(p===selected)return;selected=p;
   palette.querySelectorAll('.pl-swatch').forEach(b=>{const on=Number(b.dataset.id)===p.id;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
-  renderStage();
+  renderStage();renderDock();
 };
 if(palette){
   const fine=window.matchMedia('(hover:hover) and (pointer:fine)');
@@ -188,7 +188,18 @@ if(lab2){
   });
 }
 
-const renderAll=()=>{renderPalette();renderStage();renderPrices()};
+/* Floating dock with the selected shade on phones */
+const dock=document.createElement('div');dock.className='pl-dock';dock.setAttribute('aria-hidden','true');document.body.appendChild(dock);
+const renderDock=()=>{const l=currentLang();dock.style.setProperty('--pg',selected.hex);dock.innerHTML=`<div class="pl-orb"></div><div class="pl-dock-txt"><b>${esc(pick(selected.name,l))}</b><span>${esc(pick(T[selected.group],l))} · ${esc(pick(T.undertone,l))} ${esc(pick(T[selected.tone],l))}</span></div>`};
+let secIn=false,stageIn=true;const syncDock=()=>dock.classList.toggle('show',secIn&&!stageIn);
+if(lab&&stage&&'IntersectionObserver' in window){
+  new IntersectionObserver(e=>{secIn=e[0].isIntersecting;syncDock()},{threshold:0.05}).observe(lab);
+  new IntersectionObserver(e=>{stageIn=e[0].isIntersecting;syncDock()},{rootMargin:'-80px 0px 0px 0px'}).observe(stage);
+}
+const faqBox=document.querySelector('.faq');
+const renderFaqAsk=()=>{if(!faqBox)return;const l=currentLang();let box=faqBox.querySelector('.faq-ask');if(!box){box=document.createElement('div');box.className='faq-ask';faqBox.appendChild(box)}
+  box.innerHTML=`<span>${esc(pick(E('Une autre question ? Pamela vous répond.','Outra dúvida? A Pamela responde.','Another question? Pamela will answer.'),l))}</span><a href="https://wa.me/33681029837" target="_blank" rel="noopener noreferrer">${esc(pick(E('Écrire sur WhatsApp','Escrever no WhatsApp','Write on WhatsApp'),l))}</a>`};
+const renderAll=()=>{renderPalette();renderStage();renderDock();renderPrices();renderFaqAsk()};
 renderAll();
 new MutationObserver(renderAll).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();

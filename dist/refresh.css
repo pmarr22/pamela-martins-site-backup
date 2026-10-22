@@ -34,7 +34,7 @@ body .intro-mark .intro-emblem{width:min(190px,48vw)!important;height:auto!impor
 @media(max-width:900px){.transformations-heading>p{font-size:18px!important;padding-left:18px!important}}
 
 /* ---------- Pigment palette ---------- */
-.intervention.pigment-lab{display:block!important;position:relative!important;height:auto!important;min-height:0!important;overflow:hidden!important;color:#2b241c!important;
+.intervention.pigment-lab{display:block!important;position:relative!important;height:auto!important;min-height:0!important;overflow:clip!important;color:#2b241c!important;
   padding:clamp(64px,8vw,120px) clamp(22px,6vw,96px)!important;
   background:radial-gradient(circle at 88% 18%,rgba(255,250,238,.9) 0,rgba(255,250,238,0) 46%),linear-gradient(135deg,#f3e9d8 0%,#ead9bd 100%)!important}
 .pigment-lab::before{content:"";position:absolute;right:-12vw;top:-14vw;width:46vw;height:46vw;border-radius:50%;border:1px solid rgba(143,107,53,.18);box-shadow:0 0 0 4vw rgba(143,107,53,.035),0 0 0 8vw rgba(143,107,53,.025);pointer-events:none}
@@ -177,3 +177,80 @@ body .topbar.on-light{background:rgba(36,29,22,.92)!important;-webkit-backdrop-f
   body .hero .discover{align-self:flex-start!important;min-height:52px!important;padding:5px 6px 5px 22px!important;font-size:15px!important;font-weight:700!important}
   body .hero .discover b{width:40px!important;height:40px!important}
 }
+
+/* ---------- Pigments right after before/after ---------- */
+body main .transformations{order:5!important}
+body main .intervention{order:6!important}
+
+/* Phone: the selected shade stays pinned under the header while the palette scrolls */
+@media(max-width:980px){
+  .pl-board{display:flex;flex-direction:column}
+  .pl-stage{position:relative!important;order:-1;align-self:stretch;flex-direction:row;align-items:center;gap:14px;margin:0 -6px 22px;padding:12px 16px;text-align:left;border-radius:20px;box-shadow:0 14px 34px rgba(81,58,31,.2);background:rgba(255,251,242,.95)}
+  .pl-orb{flex:0 0 68px;width:68px!important;box-shadow:0 0 0 5px color-mix(in srgb,var(--pg) 16%,transparent),0 8px 16px color-mix(in srgb,var(--pg) 40%,transparent)}
+  .pl-orb::after{display:none}
+  .pl-stage>*:not(.pl-orb){margin:0!important}
+  .pl-kicker{font-size:10px!important;letter-spacing:.16em!important}
+  .pl-name{font-size:28px;margin-top:2px!important}
+  .pl-tone{margin-top:2px!important;font-size:13px!important}
+  .pl-skins,.pl-heal{display:none}
+}
+
+/* Floating selected-shade dock (phones): stays visible while the palette scrolls */
+.pl-dock{display:none}
+@media(max-width:980px){
+  .pl-dock{position:fixed;left:12px;right:12px;top:78px;z-index:60;display:flex;align-items:center;gap:14px;padding:10px 16px;border-radius:18px;border:1px solid rgba(143,107,53,.35);background:rgba(255,251,242,.96);box-shadow:0 14px 34px rgba(60,40,16,.28);transform:translateY(-140%);opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+  .pl-dock.show{transform:none;opacity:1}
+  .pl-dock .pl-orb{flex:0 0 46px;width:46px!important;animation:none;box-shadow:0 4px 10px color-mix(in srgb,var(--pg) 45%,transparent)}
+  .pl-dock .pl-dock-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .pl-dock .pl-dock-txt b{font:500 25px/1 "Cormorant Garamond",serif;color:#2c241a}
+  .pl-dock .pl-dock-txt span{font:600 11px/1.2 "Manrope",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8c6d40}
+}
+
+/* ---------- Questions: numbered interactive cards, last section before the closing call ---------- */
+body main .prices{order:9!important}
+body main .faq{order:10!important}
+.faq{counter-reset:faq}
+.faq details{counter-increment:faq;position:relative;margin:0 0 14px!important;padding:0!important;border:1px solid rgba(146,111,61,.3)!important;border-radius:20px!important;background:rgba(255,255,255,.7)!important;overflow:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,border-color .3s ease,background .3s ease}
+.faq details:hover{transform:translateY(-3px);border-color:#b58d4f!important;box-shadow:0 18px 38px rgba(81,58,31,.12)}
+.faq details[open]{background:linear-gradient(160deg,#fffaf0,#f6e8cc)!important;border-color:#a98645!important;box-shadow:0 22px 46px rgba(143,107,53,.2)}
+.faq details::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#c8a66b;transform:scaleY(0);transform-origin:top;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.faq details[open]::before{transform:scaleY(1)}
+.faq summary{display:flex!important;align-items:center;gap:18px;padding:22px 24px!important;cursor:pointer;list-style:none!important;font:500 clamp(22px,2.2vw,30px)/1.15 "Cormorant Garamond",serif!important;color:#2c241a!important}
+.faq summary::-webkit-details-marker{display:none!important}
+.faq summary::before{content:counter(faq,decimal-leading-zero);flex:0 0 auto;font:700 13px/1 "Manrope",sans-serif;letter-spacing:.14em;color:#8c6d40}
+.faq summary span{flex:1}
+.faq summary i{position:relative;flex:0 0 34px;width:34px;height:34px;border:1px solid rgba(146,111,61,.5);border-radius:50%;font-size:0!important;transition:transform .35s ease,background .25s ease}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:#8f6c39;transform:translate(-50%,-50%);transition:transform .35s ease,background .25s ease}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{background:#c8a66b;border-color:#c8a66b;transform:rotate(180deg)}
+.faq details[open] summary i::before{background:#21190f}
+.faq details[open] summary i::after{transform:translate(-50%,-50%) rotate(0);background:#21190f}
+.faq details[open]>p,.faq details[open]>.faq-journey{animation:faqIn .5s cubic-bezier(.2,.8,.2,1) both}
+.faq details>p{margin:0!important;padding:0 24px 24px 66px!important;font:500 17px/1.7 "Manrope",sans-serif!important;color:#3a322a!important}
+.faq-journey{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0 24px 24px 66px}
+.faq-journey p{margin:0;padding:14px;border-radius:14px;background:rgba(255,255,255,.75);border:1px solid rgba(146,111,61,.25);opacity:0;animation:faqIn .5s cubic-bezier(.2,.8,.2,1) forwards;font:600 14px/1.4 "Manrope",sans-serif!important;color:#3a322a}
+.faq-journey p:nth-child(2){animation-delay:.12s}.faq-journey p:nth-child(3){animation-delay:.24s}.faq-journey p:nth-child(4){animation-delay:.36s}
+.faq-journey b{display:block;margin-bottom:6px;font:600 26px/1 "Cormorant Garamond",serif;color:#8d6c3c}
+@keyframes faqIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.faq-ask{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:22px;padding:22px 26px;border-radius:20px;background:#2c241a;color:#f7efe0}
+.faq-ask span{font:500 clamp(22px,2.2vw,28px)/1.2 "Cormorant Garamond",serif}
+.faq-ask a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;background:#c8a66b;color:#21190f!important;font:700 15px/1 "Manrope",sans-serif;text-decoration:none;transition:transform .25s ease,background .25s ease}
+.faq-ask a:hover{background:#dcc08a;transform:translateY(-2px)}
+@media(max-width:700px){
+  .faq summary{padding:18px 16px!important;gap:12px}
+  .faq details>p{padding:0 16px 20px 16px!important;font-size:16px!important}
+  .faq-journey{grid-template-columns:1fr 1fr;padding:0 16px 18px}
+  .faq-ask{padding:18px}
+  .faq-ask a{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.faq details[open]>*,.faq-journey p{animation:none!important;opacity:1!important}}
+
+/* ---------- Shine sweep on gold / call-to-action buttons ---------- */
+body .topbar .booking,body .cta>div>a,body .pr-wa,body .faq-ask a,body .hero .discover{position:relative!important;overflow:hidden!important;isolation:isolate}
+body .topbar .booking::before,body .cta>div>a::before,body .pr-wa::before,body .faq-ask a::before,body .hero .discover::before{content:"";position:absolute;top:0;left:-80%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);pointer-events:none;z-index:1;animation:btnShine 4.5s ease-in-out infinite}
+body .cta>div>a:not(.booking)::before{background:linear-gradient(100deg,transparent,rgba(232,200,140,.45),transparent)}
+body .cta>div>a:nth-child(2)::before{animation-delay:1.2s}
+body .topbar .booking:hover::before,body .cta>div>a:hover::before,body .pr-wa:hover::before,body .faq-ask a:hover::before,body .hero .discover:hover::before{animation:btnShineNow .8s ease both}
+@keyframes btnShine{0%,62%{left:-80%}100%{left:140%}}
+@keyframes btnShineNow{from{left:-80%}to{left:140%}}
+@media(prefers-reduced-motion:reduce){body .topbar .booking::before,body .cta>div>a::before,body .pr-wa::before,body .faq-ask a::before,body .hero .discover::before{animation:none!important;display:none}}
