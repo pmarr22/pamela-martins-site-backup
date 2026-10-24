@@ -532,3 +532,11 @@ body .cta .booking,body .cta>div>a{white-space:nowrap!important}
 }
 /* German flag */
 .flag-svg{display:block}
+
+/* Microneedling card: full-width third card in the explanation section */
+.explain-card--wide{grid-column:1/-1;background:linear-gradient(160deg,#fffdf8,#f4e8d0)}
+@media(min-width:1001px){.explain-card--wide .explain-dl{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,4vw,64px)}}
+
+/* Dark-background product photo inside the gallery */
+.px-frame.dark{background:#060606!important}
+.px-frame img[data-dark]{mix-blend-mode:normal!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;transform:none}
