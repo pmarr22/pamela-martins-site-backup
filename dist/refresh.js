@@ -219,3 +219,28 @@ cards.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b
 sc.after(dots);
 const sync=()=>{const left=sc.getBoundingClientRect().left+20;let best=0,d=1e9;cards.forEach((c,i)=>{const x=Math.abs(c.getBoundingClientRect().left-left);if(x<d){d=x;best=i}});[...dots.children].forEach((b,i)=>b.classList.toggle('on',i===best))};
 sc.addEventListener('scroll',()=>requestAnimationFrame(sync),{passive:true});addEventListener('resize',sync);sync();})();
+
+/* Products showcase: photo gallery with accordion list */
+(()=>{const root=document.querySelector('[data-px]');if(!root)return;
+const items=[...root.querySelectorAll('.px-item')],frame=root.querySelector('[data-px-frame]'),thumbs=root.querySelector('[data-px-thumbs]'),count=root.querySelector('[data-px-count]'),stage=root.querySelector('.px-stage');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cur=0,idx=0,imgs=[],timer=0,paused=false,visible=false;
+const pad=n=>String(n).padStart(2,'0');
+const lang=()=>{const l=(document.documentElement.lang||'fr').toLowerCase();return l.startsWith('pt')?'pt':l.startsWith('en')?'en':'fr'};
+const build=()=>{const it=items[cur];const names=it.dataset.images.split(',');const alts=(it.dataset.alts||'').split('|');
+  stage.style.setProperty('--tone',it.dataset.tone);
+  frame.innerHTML=names.map((n,i)=>`<img src="assets/${n}.jpg" alt="${alts[i]||''}" width="800" height="800" class="${i===0?'on':''}">`).join('');
+  thumbs.innerHTML=names.map((n,i)=>`<button type="button" class="${i===0?'on':''}" aria-label="${i+1}"><img src="assets/${n}.jpg" alt="" width="800" height="800"></button>`).join('');
+  imgs=[...frame.children];idx=0;show(0)};
+const show=i=>{idx=(i+imgs.length)%imgs.length;imgs.forEach((im,k)=>im.classList.toggle('on',k===idx));[...thumbs.children].forEach((b,k)=>b.classList.toggle('on',k===idx));count.textContent=`${pad(idx+1)} / ${pad(imgs.length)}`};
+const activate=n=>{cur=(n+items.length)%items.length;items.forEach((it,k)=>{const on=k===cur;it.classList.toggle('is-active',on);it.querySelector('.px-head').setAttribute('aria-expanded',String(on))});build()};
+const tick=()=>{if(paused||!visible||reduced)return;if(idx>=imgs.length-1)activate(cur+1);else show(idx+1)};
+const start=()=>{clearInterval(timer);timer=setInterval(tick,3200)};
+items.forEach((it,k)=>it.querySelector('.px-head').addEventListener('click',()=>{if(k===cur)return;activate(k);start()}));
+root.querySelector('[data-px-prev]').addEventListener('click',()=>{show(idx-1);start()});
+root.querySelector('[data-px-next]').addEventListener('click',()=>{show(idx+1);start()});
+thumbs.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;show([...thumbs.children].indexOf(b));start()});
+root.addEventListener('pointerenter',()=>{paused=true});root.addEventListener('pointerleave',()=>{paused=false});
+root.addEventListener('focusin',()=>{paused=true});root.addEventListener('focusout',()=>{paused=false});
+if('IntersectionObserver' in window)new IntersectionObserver(e=>{visible=e[0].isIntersecting},{threshold:.25}).observe(root);else visible=true;
+activate(0);start();})();
