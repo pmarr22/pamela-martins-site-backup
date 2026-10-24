@@ -299,7 +299,7 @@ body .instagram-cta svg{width:26px!important;height:26px!important}
   .pl-info{display:flex;flex-direction:column;flex:1;min-width:0;text-align:left}
   .pl-stage{padding:14px 16px!important}
   .pl-orb{flex:0 0 76px!important;width:76px!important;box-shadow:0 0 0 5px color-mix(in srgb,var(--pg) 16%,transparent),0 8px 16px color-mix(in srgb,var(--pg) 40%,transparent)}
-  .pl-info .pl-kicker{white-space:nowrap;font-size:10px!important;letter-spacing:.14em!important;margin:0!important}
+  .pl-info .pl-kicker{white-space:normal;overflow-wrap:anywhere;font-size:10px!important;line-height:1.35!important;letter-spacing:.1em!important;margin:0!important}
   .pl-info .pl-name{font-size:32px;line-height:1;margin:4px 0 0!important}
   .pl-info .pl-tone{margin:4px 0 0!important;font-size:13.5px!important}
   .pl-info .pl-skins{display:flex;gap:8px;margin-top:10px}
@@ -478,3 +478,19 @@ body main .explain{order:2!important}
   .explain-cta{padding:20px}
   .explain-cta a{width:100%}
 }
+
+/* Small phones: keep the selected-shade card inside the screen */
+@media(max-width:380px){
+  .pl-stage{gap:12px!important;padding:12px 12px!important}
+  .pl-orb{flex:0 0 60px!important;width:60px!important}
+  .pl-info .pl-name{font-size:26px!important}
+  .pl-info .pl-tone{font-size:12.5px!important}
+  .pl-info .pl-skins span{width:26px;height:26px}
+  .pl-info .pl-skins span::after{inset:6px}
+  .pl-dock{left:8px;right:8px;padding:8px 12px;gap:10px}
+  .pl-dock .pl-dock-txt b{font-size:22px}
+  .pl-dock .pl-dock-txt span{font-size:10px;letter-spacing:.1em}
+}
+.pl-stage{max-width:100%;overflow:hidden}
+@media(max-width:980px){body main .pigment-lab .pl-info .pl-kicker{font-size:11px!important;letter-spacing:.1em!important;line-height:1.3!important}}
+@media(max-width:980px){body main section.pigment-lab .pl-info p.pl-kicker:not(.a):not(.b):not(.c){font-size:11px!important;letter-spacing:.1em!important;line-height:1.3!important}}
