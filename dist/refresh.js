@@ -244,3 +244,12 @@ root.addEventListener('pointerenter',()=>{paused=true});root.addEventListener('p
 root.addEventListener('focusin',()=>{paused=true});root.addEventListener('focusout',()=>{paused=false});
 if('IntersectionObserver' in window)new IntersectionObserver(e=>{visible=e[0].isIntersecting},{threshold:.25}).observe(root);else visible=true;
 activate(0);start();})();
+
+/* FAQ: categories and filter chips */
+(()=>{const faq=document.querySelector('.faq');if(!faq)return;
+const cats=['pmu','rdv','rdv','rdv'];[...faq.querySelectorAll('details:not([data-cat])')].forEach((d,i)=>{d.dataset.cat=cats[i]||'rdv'});
+const chips=[...faq.querySelectorAll('.faq-chip')];const items=[...faq.querySelectorAll('details')];
+const apply=f=>{chips.forEach(c=>c.classList.toggle('on',c.dataset.filter===f));items.forEach(d=>{const show=f==='all'||d.dataset.cat===f;d.hidden=!show;if(!show)d.open=false})};
+chips.forEach(c=>c.addEventListener('click',()=>apply(c.dataset.filter)));
+const ask=faq.querySelector('.faq-feature-book');if(ask)ask.addEventListener('click',()=>{});
+})();
