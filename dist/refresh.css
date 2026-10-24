@@ -318,8 +318,9 @@ body .instagram-cta svg{width:26px!important;height:26px!important}
 }
 
 /* ---------- Credentials: single proof photo after removing the product shot ---------- */
-body .credentials-proof{grid-template-rows:1fr!important}
-body .credentials-phibright{height:100%!important;min-height:391px}
+body .credentials-proof{grid-template-rows:1fr 1fr!important}
+body .credentials-phibright,body .credentials-products{height:391px!important}
+body .credentials-products img{object-fit:cover!important;object-position:50% 40%!important}
 
 /* ---------- Products & equipment ---------- */
 body main .products{order:6!important}
