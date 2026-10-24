@@ -180,7 +180,7 @@ body .topbar.on-light{background:rgba(36,29,22,.92)!important;-webkit-backdrop-f
 
 /* ---------- Pigments right after before/after ---------- */
 body main .transformations{order:5!important}
-body main .intervention{order:6!important}
+body main .intervention{order:7!important}
 
 /* Phone: the selected shade stays pinned under the header while the palette scrolls */
 @media(max-width:980px){
@@ -323,7 +323,7 @@ body .credentials-phibright,body .credentials-products{height:391px!important}
 body .credentials-products img{object-fit:cover!important;object-position:50% 40%!important}
 
 /* ---------- Products & equipment ---------- */
-body main .products{order:6!important}
+body main .products{order:7!important}
 .products{position:relative;padding:clamp(72px,9vw,124px) clamp(22px,6vw,96px)!important;background:linear-gradient(135deg,#fcfaf5 0%,#f4ecdd 100%)!important;color:#2b241c!important}
 .products-heading{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(28px,4vw,64px);align-items:end}
 .products h2{margin:22px 0 0!important;font:500 clamp(48px,6.6vw,96px)/.92 "Cormorant Garamond","Instrument Serif",serif!important;letter-spacing:-.03em;color:#2a2118!important}
@@ -442,7 +442,7 @@ body main .products{order:6!important}
 @media(prefers-reduced-motion:reduce){.px-frame img,.px-body,.px-item::before{transition:none!important}}
 
 /* ---------- Explanation: lip neutralisation and micropigmentation ---------- */
-body main .explain{order:2!important}
+body main .explain{order:6!important}
 .explain{position:relative;padding:clamp(64px,8vw,112px) clamp(22px,6vw,96px)!important;background:linear-gradient(180deg,#fbf8f1 0%,#f3eadb 100%)!important;color:#2b241c!important}
 .explain-heading{max-width:900px}
 .explain h2{margin:22px 0 18px!important;font:500 clamp(46px,6.2vw,90px)/.94 "Cormorant Garamond","Instrument Serif",serif!important;letter-spacing:-.03em;color:#2a2118!important}
@@ -523,3 +523,12 @@ body main .explain{order:2!important}
   .faq-chips::-webkit-scrollbar{display:none}
   .faq-chip{flex:0 0 auto}
 }
+
+/* WhatsApp number must stay on one line, even on narrow phones */
+body .cta .booking,body .cta>div>a{white-space:nowrap!important}
+@media(max-width:760px){
+  body .cta .booking{font-size:clamp(12.5px,3.9vw,15.5px)!important;letter-spacing:0!important;padding:0 16px!important;gap:8px!important}
+  body .cta>div>a:not(.booking){font-size:clamp(13px,4vw,15.5px)!important}
+}
+/* German flag */
+.flag-svg{display:block}

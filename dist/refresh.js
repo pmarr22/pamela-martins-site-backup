@@ -1,7 +1,7 @@
 /* Pigment palette and interactive price list. Rendered in FR / PT / EN and re-rendered when the page language changes. */
 (()=>{
-const currentLang=()=>{const l=(document.documentElement.lang||'fr').toLowerCase();return l.startsWith('pt')?'pt':l.startsWith('en')?'en':'fr'};
-const pick=(o,l)=>o[l]??o.fr;
+const currentLang=()=>{const l=(document.documentElement.lang||'fr').toLowerCase();return l.startsWith('pt')?'pt':l.startsWith('en')?'en':l.startsWith('de')?'de':'fr'};
+const pick=(o,l)=>{if(l==='de'){if(o.de!=null)return o.de;if(Array.isArray(o.en))return window.DE_SERVICES||o.en;const m=window.DE_EN||{};return m[o.en]??o.en??o.fr}return o[l]??o.fr};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 /* ---------- Pigments ---------- */
