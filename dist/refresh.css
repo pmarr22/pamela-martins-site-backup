@@ -540,3 +540,21 @@ body .cta .booking,body .cta>div>a{white-space:nowrap!important}
 /* Dark-background product photo inside the gallery */
 .px-frame.dark{background:#060606!important}
 .px-frame img[data-dark]{mix-blend-mode:normal!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;transform:none}
+
+/* Muvoria Lab signature in the footer */
+.site-footer .made-by{flex:0 0 100%;grid-column:1/-1;width:100%;order:99;margin:18px 0 0!important;padding-top:18px;border-top:1px solid rgba(135,101,54,.22);text-align:center}
+.site-footer .made-by a{display:inline-flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;font:600 12.5px/1.4 "Manrope",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(48,39,29,.62);text-decoration:none;transition:color .3s ease,letter-spacing .3s ease}
+.site-footer .made-by b{font-weight:800;color:#8b6c37;letter-spacing:.16em}
+.site-footer .made-by i{font-style:normal;color:#b58d4f}
+.site-footer .made-by u{text-decoration:none;text-transform:lowercase;letter-spacing:.08em;border-bottom:1px solid rgba(139,108,55,.45)}
+.site-footer .made-by em{font-style:normal;color:#8b6c37;transition:transform .3s ease}
+.site-footer .made-by a:hover{color:#2c241a;letter-spacing:.17em}
+.site-footer .made-by a:hover em{transform:translate(2px,-2px)}
+.site-footer .made-by a:focus-visible{outline:2px solid #9b743d;outline-offset:4px;border-radius:4px}
+@media(max-width:560px){.site-footer .made-by a{font-size:11px;letter-spacing:.1em}}
+.site-footer .made-by-logo{display:block;height:26px;width:auto;opacity:.88;transition:opacity .3s ease,transform .3s ease}
+.site-footer .made-by a:hover .made-by-logo{opacity:1;transform:translateY(-1px)}
+@media(max-width:560px){.site-footer .made-by-logo{height:22px}}
+
+.site-footer .made-by-logo{height:30px!important;opacity:1!important}
+@media(max-width:560px){.site-footer .made-by-logo{height:26px!important}}
